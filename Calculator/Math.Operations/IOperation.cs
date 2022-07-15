@@ -7,8 +7,8 @@ namespace Math.Operations
 {
     public interface IOperation
     {
-        int operandCount { get; set; }
-        void Evaluate(double[] operands);
+        int OperandCount { get; set; }
+        double Evaluate(double[] operands);
        
     }
 }

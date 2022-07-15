@@ -7,22 +7,22 @@ namespace Math.Operations
 {
     public abstract class UnaryOperation : IOperation
     {
-        public int operandCount { get; set; }
+        public int OperandCount { get; set; }
         public UnaryOperation()
         {
-            operandCount = 1;
+            OperandCount = 1;
         }
-        public void Evaluate(double[] operands)
+        public double Evaluate(double[] operands)
         {
-           if(operandCount != operands.Length)
+           if(OperandCount != operands.Length)
             {
 
                 throw new NotImplementedException();
             }
-            return;
+            return Calculate(operands);
         }
 
-        
+        protected abstract double Calculate(double[] operands);
 
         
     }

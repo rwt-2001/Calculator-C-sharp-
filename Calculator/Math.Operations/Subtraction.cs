@@ -7,11 +7,9 @@ namespace Math.Operations
 {
     public class Subtraction : BinaryOperation
     {
-        public new double Evaluate(double[] operands)
+        protected override double Calculate(double[] operands)
         {
-            base.Evaluate(operands);
-            double result = operands[0] - operands[1];
-            return result;
+            throw new NotImplementedException();
         }
     }
 }

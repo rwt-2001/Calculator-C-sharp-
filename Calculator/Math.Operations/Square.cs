@@ -7,11 +7,11 @@ namespace Math.Operations
 {
     public class Square : UnaryOperation
     {
-        public new double Evaluate(double[] operands)
+        protected override double Calculate(double[] operands)
         {
-            base.Evaluate(operands);
-            double result = operands[0] * operands[0];
+            double result = operands[0]*operands[0];
             return result;
         }
+
     }
 }

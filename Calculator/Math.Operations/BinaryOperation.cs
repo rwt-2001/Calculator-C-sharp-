@@ -7,20 +7,32 @@ namespace Math.Operations
 {
     public abstract class BinaryOperation : IOperation
     {
-        public int operandCount { get; set; }
+       
         public BinaryOperation()
         {
-            operandCount = 2;
+            OperandCount = 2;
         }
-        public void Evaluate(double[] operands)
+
+        public int OperandCount { get; set; }
+
+        /*
+         Evaluate Method will validate the given operands against
+         required operands. If the operands are same as required then it 
+         will call the calculate method and return the answer
+         */
+        public double Evaluate(double[] operands)
         {
-            if(operands.Length != operandCount)
+            if(operands.Length != OperandCount)
             {
                 throw new NotImplementedException();
             }
 
-            return;
+            return Calculate(operands);
+
         }
+
+        protected abstract double Calculate(double[] operands);
         
     }
+
 }
