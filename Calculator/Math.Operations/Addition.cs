@@ -7,12 +7,12 @@ namespace Math.Operations
 {
     public class Addition : BinaryOperation
     {
-        public void Evaluate()
+        public new double Evaluate( double[] operands)
         {
-            void addition()
-            {
 
-            }
+            base.Evaluate(operands);
+            double result = operands[0] + operands[1];
+            return result;
         }
         
     }

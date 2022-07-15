@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Math.Operations
+namespace Calculator
 {
-    public class SquareRoot : UnaryOperation
+    public abstract class BinaryOperations : IOperation
     {
 
     }

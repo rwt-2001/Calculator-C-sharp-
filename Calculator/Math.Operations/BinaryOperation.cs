@@ -7,14 +7,20 @@ namespace Math.Operations
 {
     public abstract class BinaryOperation : IOperation
     {
-        public int operands { get; set; }
-        public virtual void Evaluate()
+        public int operandCount { get; set; }
+        public BinaryOperation()
         {
-            //Interface Overrided Function
+            operandCount = 2;
         }
-        BinaryOperation()
+        public void Evaluate(double[] operands)
         {
-            operands = 2;
+            if(operands.Length != operandCount)
+            {
+                throw new NotImplementedException();
+            }
+
+            return;
         }
+        
     }
 }

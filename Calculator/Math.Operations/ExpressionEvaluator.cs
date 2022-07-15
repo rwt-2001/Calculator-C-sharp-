@@ -7,11 +7,11 @@ namespace Math.Operations
 {
     public class ExpressionEvaluator
     {
-        void Evaluate()
+        public void Evaluate()
         {
 
         }
-        void RegisterCustomOperation()
+        public void RegisterCustomOperation()
         {
 
         }
