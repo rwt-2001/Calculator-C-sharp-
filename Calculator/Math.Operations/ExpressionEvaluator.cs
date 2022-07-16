@@ -7,7 +7,7 @@ namespace Math.Operations
 {
     public class ExpressionEvaluator
     {
-        private Dictionary<string, KeyValuePair<IOperation, int>> _operationDictionary;
+        private Dictionary<string, Tuple<IOperation, int>> _operationDictionary;
 
         /*Constructor to Initialize the dictionary for basic operations*/
         public ExpressionEvaluator()
@@ -27,6 +27,7 @@ namespace Math.Operations
         public double Evaluate(string expression)
         {
             //TODO: Implement expression parsing and Exception Handling
+            List<object> infix= _ToInfixList(expression);
             double result = 0;
             return result;
         }
@@ -35,7 +36,7 @@ namespace Math.Operations
         public void RegisterOperation(string @operator,int priority, IOperation operation)
         {
             _operationDictionary.
-                Add(@operator, new KeyValuePair<IOperation, int>( operation, priority ));
+                Add(@operator, new Tuple<IOperation, int>( operation, priority ));
         }
 
         /* Method to remove an operation*/
@@ -50,5 +51,63 @@ namespace Math.Operations
             else
                 Console.WriteLine("Operator Not Found");
         }
+
+        
+
+        /*
+         * TODO : Convert string expression to List<object> (separating operands and operators)
+         */
+        private List<object> _ToInfixList(string expressionstr)
+        {
+            List<object> infix = new List<object>();
+            int j;
+
+            /*
+             * 
+             *TODO:  Convert expression into list infix of type dynamic
+             *
+             */
+            for (int i = 0; i < expressionstr.Length; i++)
+            {
+                if (expressionstr[i] == ' ') continue;
+                if ((expressionstr[i] >= '0' && expressionstr[i] <= '9'))
+                {
+                    j = i;
+                    string oprand = "";
+                    while (j < expressionstr.Length && ((expressionstr[j] >= '0' && expressionstr[j] <= '9') || expressionstr[j] == '.') && expressionstr[j] != ' ')
+                    {
+                        oprand += expressionstr[j];
+                        j++;
+                    }
+                    i = j - 1;
+
+                    Console.WriteLine(oprand);
+                    infix.Add(Convert.ToDouble(oprand));
+                    continue;
+
+                }
+
+                string @operator = "";
+                j = i;
+                while (j < expressionstr.Length && !(expressionstr[j] >= 48 && expressionstr[j] <= 57) && expressionstr[j] != ' ')
+                {
+                    @operator += expressionstr[j];
+                    j++;
+                }
+                infix.Add(@operator);
+                i = j - 1;
+
+            }
+            return infix;
+        }
+        /*
+         * TODO : Infix to postfix conversion
+         */
+        private List<object> _InfixToPostfix(List<object> infix)
+        {
+            List<object> postfix = new List<object>();
+            return postfix;
+        }
+
     }
 }

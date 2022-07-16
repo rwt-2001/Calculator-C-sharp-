@@ -13,7 +13,7 @@ namespace Math.Operations
             OperandCount = 2;
         }
 
-        public int OperandCount { get; set; }
+        public int OperandCount { get; }
 
         /*
          Evaluate Method will validate the given operands against

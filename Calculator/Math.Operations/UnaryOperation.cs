@@ -7,7 +7,7 @@ namespace Math.Operations
 {
     public abstract class UnaryOperation : IOperation
     {
-        public int OperandCount { get; set; }
+        public int OperandCount{get;}
         public UnaryOperation()
         {
             OperandCount = 1;
@@ -16,7 +16,6 @@ namespace Math.Operations
         {
            if(OperandCount != operands.Length)
             {
-
                 throw new NotImplementedException();
             }
             return Calculate(operands);
