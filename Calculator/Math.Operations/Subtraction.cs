@@ -9,7 +9,8 @@ namespace Math.Operations
     {
         protected override double Calculate(double[] operands)
         {
-            throw new NotImplementedException();
+            double result = operands[0] - operands[1];
+            return result;
         }
     }
 }

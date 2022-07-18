@@ -29,6 +29,9 @@ namespace Math.Operations
             //TODO: Implement expression parsing and Exception Handling
             List<object> infix= ToInfixList(expression);
             List<object> postfix = InfixToPostfix(infix);
+            /*
+             * TODO: Evaluate postfix expression
+             */
 
             double result = 0;
             return result;
@@ -66,7 +69,7 @@ namespace Math.Operations
         /*
          * TODO : Convert string expression to List<object> (separating operands and operators)
          */
-        private List<object> ToInfixList(string expressionstr)
+        private List<object> ToInfixList(string expression)
         {
             List<object> infix = new List<object>();
             int j;
@@ -76,44 +79,47 @@ namespace Math.Operations
              *TODO:  Convert expression into list infix of type dynamic
              *
              */
-            for (int i = 0; i < expressionstr.Length; i++)
+            for (int i = 0; i < expression.Length; i++)
             {
-                if (expressionstr[i] == ' ') continue;
-                if ((expressionstr[i] >= '0' && expressionstr[i] <= '9'))
+                if (expression[i] == ' ') continue;
+                if ((expression[i] >= '0' && expression[i] <= '9'))
                 {
                     j = i;
                     string oprand = "";
-                    while (j < expressionstr.Length && ((expressionstr[j] >= '0' && expressionstr[j] <= '9') || expressionstr[j] == '.') && expressionstr[j] != ' ')
+
+                    while (
+                        j < expression.Length && 
+                        ((expression[j] >= '0' && expression[j] <= '9') || expression[j] == '.') 
+                        && expression[j] != ' '
+                        )
                     {
-                        oprand += expressionstr[j];
+                        oprand += expression[j];
                         j++;
                     }
                     i = j - 1;
 
 
                     infix.Add(Convert.ToDouble(oprand));
-                    
+
 
                 }
 
                 else
                 {
-                    /* 
-                     * if their is a bracker just add it to the list
-                     */
-                    if (expressionstr[i].ToString() == "(" || expressionstr[i].ToString() == ")")
+                 
+
+                    if (expression[i].ToString() == "(" || expression[i].ToString() == ")")
                     {
-                        infix.Add(expressionstr[i].ToString());
-                        Console.WriteLine(expressionstr[i]);
+                        infix.Add(expression[i].ToString());
                     }
-                    
+
                     else
                     {
                         string @operator = "";
                         j = i;
-                        while (j < expressionstr.Length && !(expressionstr[j] >= 48 && expressionstr[j] <= 57) && expressionstr[j] != ' ')
+                        while (j < expression.Length && !(expression[j] >= '0' && expression[j] <= '9') && expression[j] != ' ' && expression[j] != ')' && expression[j] != '(')
                         {
-                            @operator += expressionstr[j];
+                            @operator += expression[j];
                             j++;
                         }
                         Console.WriteLine(@operator);
@@ -121,7 +127,7 @@ namespace Math.Operations
                         i = j - 1;
                     }
                 }
-                
+
 
 
             }
@@ -135,9 +141,94 @@ namespace Math.Operations
         {
             List<object> postfix = new List<object>();
             Stack<string> operatorStk = new Stack<string>();
+
+            for (int i = 0; i < infix.Count; i++)
+            {
+                if (infix[i].GetType() == typeof(double))
+                {
+                    postfix.Add(infix[i]);
+                }
+                else
+                {
+                    if (infix[i].ToString() == ")")
+                    {
+                        while (operatorStk.Peek() != "(")
+                        {
+                            postfix.Add(operatorStk.Peek());
+                            operatorStk.Pop();
+                        }
+                        operatorStk.Pop();
+                    }
+
+
+                    else
+                    {
+                        if (operatorStk.Count == 0 || operatorStk.Peek() == "(" || infix[i].ToString() == "(")
+                        {
+
+                            operatorStk.Push(infix[i].ToString());
+
+                        }
+
+                        else
+                        {
+                            //If the priority of operator at top of stack if equal to or greater than incoming operator then pop the stack and 
+                            while (
+                                operatorStk.Peek() != "(" 
+                                && operatorStk.Count != 0 
+                                && _operationDictionary[operatorStk.Peek()].Value >= _operationDictionary[infix[i].ToString()].Value
+                                )
+                            {
+                                postfix.Add(operatorStk.Peek());
+                                operatorStk.Pop();
+                            }
+                            operatorStk.Push(infix[i].ToString());
+                        }
+
+                    }
+
+                }
+            }
+            while (operatorStk.Count > 0)
+            {
+                postfix.Add(operatorStk.Peek());
+                operatorStk.Pop();
+            }
             return postfix;
 
         }
 
+
+        private void GetResult(List<object> postfix)
+        {
+            /*
+             * TODO: Apply exception handling here
+             */
+           Stack<object> result = new Stack<object>();
+            foreach (object item in postfix)
+            {
+                if(item.GetType() == typeof(double))
+                    result.Push((double)item);
+
+
+                
+                else
+                {
+                    string currentOperator = item.ToString();
+                    int operandsRequired = _operationDictionary[currentOperator].Value;
+                    Operation @operation = _operationDictionary[currentOperator].Key;
+                    double[] operands = new double[operandsRequired];
+                    for (int i = operandsRequired - 1;i >= 0;i--)
+                    {
+                        operands[i] = (double)result.Peek();
+                        result.Pop();
+                    }
+
+                    double newResult = @operation.Evaluate(operands);
+                    result.Push(newResult);
+                }
+            }
+
+        }
     }
 }
