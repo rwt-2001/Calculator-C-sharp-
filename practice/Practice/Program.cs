@@ -78,7 +78,7 @@ class Practice
 {
     static void Main()
     {
-        string expressionstr = "2 + 3.6 + 4 + 7 / 2 * 8 - 94 ln 8";
+        string expressionstr = "(-3+4) *(5/6)";
      
 
         List<object> infix = GetInfixList(expressionstr);
@@ -100,52 +100,11 @@ class Practice
             priority.Add("*", 10);
             priority.Add("ln", 20);
 
+        List<object> postfix = InfixToPostfix(infix, priority);
 
 
 
-        //TODO : Change list infix to postfix -> Completed
 
-        List<object> postfix = new List<object>();
-        Stack<string> operatorStk = new Stack<string>();
-
-        for(int i = 0; i < infix.Count; i++)
-        {
-            if(infix[i].GetType() == typeof(double))
-            {
-                postfix.Add(infix[i]);
-            }
-            else
-            {
-                if(operatorStk.Count == 0)
-                {
-                    operatorStk.Push(infix[i].ToString());
-                }
-                else
-                {
-                    if (priority[operatorStk.Peek()] < priority[infix[i].ToString()])
-                    {
-                        operatorStk.Push(infix[i].ToString());
-                    }
-                    else
-                    {
-                        //If the priority of operator at top of stack if equal to or greater than incoming operator then pop the stack and 
-                        while(operatorStk.Count != 0 && priority[operatorStk.Peek()] >= priority[infix[i].ToString()])
-                        {
-                            postfix.Add( operatorStk.Peek());
-                            operatorStk.Pop();
-                        }
-                        operatorStk.Push(infix[i].ToString());
-                    }
-
-                }
-
-            }
-        }
-        while(operatorStk.Count > 0)
-        {
-            postfix.Add(operatorStk.Peek());
-            operatorStk.Pop();
-        }
         Console.WriteLine("\n\nPostfix Expression : ");
         for (int i = 0; i < postfix.Count; i++)
         {
@@ -160,6 +119,7 @@ class Practice
     //Method to form infix list of type object
     static public List<object> GetInfixList(string expressionstr)
     {
+
         List<object> infix = new List<object>();
         int j;
 
@@ -182,21 +142,39 @@ class Practice
                 }
                 i = j - 1;
 
-                Console.WriteLine(oprand);
+
                 infix.Add(Convert.ToDouble(oprand));
-                continue;
+
 
             }
 
-            string @operator = "";
-            j = i;
-            while (j < expressionstr.Length && !(expressionstr[j] >= 48 && expressionstr[j] <= 57) && expressionstr[j] != ' ')
+            else
             {
-                @operator += expressionstr[j];
-                j++;
+                /* 
+                 * if their is a bracker just add it to the list
+                 */
+                if (expressionstr[i].ToString() == "(" || expressionstr[i].ToString() == ")")
+                {
+                    infix.Add(expressionstr[i].ToString());
+                    Console.WriteLine(expressionstr[i]);
+                }
+
+                else
+                {
+                    string @operator = "";
+                    j = i;
+                    while (j < expressionstr.Length && !(expressionstr[j] >= 48 && expressionstr[j] <= 57) && expressionstr[j] != ' ' && expressionstr[j] != ')' && expressionstr[j] !='(')
+                    {
+                        @operator += expressionstr[j];
+                        j++;
+                    }
+                    Console.WriteLine(@operator);
+                    infix.Add(@operator);
+                    i = j - 1;
+                }
             }
-            infix.Add(@operator);
-            i = j - 1;
+
+
 
         }
         return infix;
@@ -204,4 +182,60 @@ class Practice
 
 
     //Method to convert
+    static public List<object> InfixToPostfix(List<object> infix, Dictionary<string,int> priority)
+    {
+        //TODO : Change list infix to postfix -> Completed
+
+        List<object> postfix = new List<object>();
+        Stack<string> operatorStk = new Stack<string>();
+
+        for (int i = 0; i < infix.Count; i++)
+        {
+            if (infix[i].GetType() == typeof(double))
+            {
+                postfix.Add(infix[i]);
+            }
+            else
+            {
+                if (operatorStk.Count == 0 || operatorStk.Peek()=="(")
+                {
+                    operatorStk.Push(infix[i].ToString());
+                }
+                else
+                {
+                    if (infix[i].ToString() == ")")
+                    {
+                        while(operatorStk.Peek()!= "("){
+                            postfix.Add(operatorStk.Peek());
+                            operatorStk.Pop();
+                        }
+                        operatorStk.Pop();
+                    }
+                    else if (priority[operatorStk.Peek()] < priority[infix[i].ToString()])
+                    {
+                        operatorStk.Push(infix[i].ToString());
+                    }
+                    
+                    else
+                    {
+                        //If the priority of operator at top of stack if equal to or greater than incoming operator then pop the stack and 
+                        while (operatorStk.Count != 0 && priority[operatorStk.Peek()] >= priority[infix[i].ToString()])
+                        {
+                            postfix.Add(operatorStk.Peek());
+                            operatorStk.Pop();
+                        }
+                        operatorStk.Push(infix[i].ToString());
+                    }
+
+                }
+
+            }
+        }
+        while (operatorStk.Count > 0)
+        {
+            postfix.Add(operatorStk.Peek());
+            operatorStk.Pop();
+        }
+        return postfix;
+    }
 }

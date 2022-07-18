@@ -10,13 +10,13 @@ namespace Math.Operations
 
         protected override double Calculate(double[] operands)
         {
-            double result = _CalculateLog(operands[0]);
+            double result = CalculateLog(operands[0]);
             return result;
         }
 
-        private double _CalculateLog(double num)
+        private double CalculateLog(double num)
         {
-            return (num>1) ? 1 + _CalculateLog(num/2) : 0; 
+            return (num>1) ? 1 + CalculateLog(num/2) : 0; 
         }
     }
 }

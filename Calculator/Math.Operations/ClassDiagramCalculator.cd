@@ -1,104 +1,102 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Math.Operations.Addition">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+    <Position X="6.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Addition.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Math.Operations.Subtraction">
-    <Position X="2.5" Y="3.5" Width="1.5" />
+    <Position X="8.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Subtraction.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Math.Operations.Divide">
-    <Position X="4.5" Y="3.5" Width="1.5" />
+    <Position X="12" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Divide.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Math.Operations.Multiplication">
-    <Position X="6.75" Y="3.5" Width="1.5" />
+    <Position X="14.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Multiplication.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Math.Operations.BinaryOperation">
-    <Position X="4" Y="1" Width="1.5" />
+    <Position X="11.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAQAAAAgAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BinaryOperation.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Math.Operations.Square">
-    <Position X="1" Y="8.25" Width="1.5" />
+    <Position X="7" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Square.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Math.Operations.Factorial">
-    <Position X="3.25" Y="8.25" Width="1.5" />
+    <Position X="10.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Factorial.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Math.Operations.Reciprocal">
-    <Position X="5.25" Y="8.25" Width="1.5" />
+    <Position X="12.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Reciprocal.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Math.Operations.UnaryOperation">
-    <Position X="4.25" Y="5.5" Width="1.5" />
+    <Position X="11.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAQAAAAgAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UnaryOperation.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Math.Operations.ExpressionEvaluator">
-    <Position X="11.25" Y="6.25" Width="1.5" />
+    <Position X="1.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAEAAAAACAAgAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgEAAAQACAAgAAAAAAAAAAAAAACAABAAA=</HashCode>
       <FileName>ExpressionEvaluator.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Math.Operations.Power">
-    <Position X="11" Y="3.5" Width="1.5" />
+    <Position X="10.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Power.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Math.Operations.Log">
-    <Position X="9" Y="3.5" Width="1.5" />
+    <Position X="16.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAEAAAAAAAAAAA=</HashCode>
       <FileName>Log.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Math.Operations.LogNatural">
-    <Position X="7.25" Y="8.25" Width="1.5" />
+    <Position X="14.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>LogNatural.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="Math.Operations.IOperation">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+  <Class Name="Math.Operations.Operation">
+    <Position X="0.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IOperation.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAgAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Operation.cs</FileName>
     </TypeIdentifier>
-  </Interface>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

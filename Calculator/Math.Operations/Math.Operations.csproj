@@ -46,7 +46,7 @@
     <Compile Include="Divide.cs" />
     <Compile Include="ExpressionEvaluator.cs" />
     <Compile Include="Factorial.cs" />
-    <Compile Include="IOperation.cs" />
+    <Compile Include="Operation.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="LogNatural.cs" />
     <Compile Include="Multiplication.cs" />

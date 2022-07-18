@@ -1,0 +1,6 @@
+C:\Users\GPCTAdmin\Desktop\shubham-rawat\Calculator\Math.Operations\bin\Debug\Math.Operations.dll
+C:\Users\GPCTAdmin\Desktop\shubham-rawat\Calculator\Math.Operations\bin\Debug\Math.Operations.pdb
+C:\Users\GPCTAdmin\Desktop\shubham-rawat\Calculator\Math.Operations\obj\Debug\Math.Operations.csproj.AssemblyReference.cache
+C:\Users\GPCTAdmin\Desktop\shubham-rawat\Calculator\Math.Operations\obj\Debug\Math.Operations.csproj.CoreCompileInputs.cache
+C:\Users\GPCTAdmin\Desktop\shubham-rawat\Calculator\Math.Operations\obj\Debug\Math.Operations.dll
+C:\Users\GPCTAdmin\Desktop\shubham-rawat\Calculator\Math.Operations\obj\Debug\Math.Operations.pdb
