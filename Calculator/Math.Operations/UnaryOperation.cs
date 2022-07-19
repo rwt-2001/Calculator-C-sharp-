@@ -9,7 +9,7 @@ namespace Math.Operations
     {
         public UnaryOperation()
         {
-            OperandCount = 1;
+            base.OperandCount = 1;
         }
   
     }

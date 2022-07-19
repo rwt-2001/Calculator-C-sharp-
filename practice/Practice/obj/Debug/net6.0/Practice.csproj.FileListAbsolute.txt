@@ -13,3 +13,5 @@ C:\Users\GPCTAdmin\Desktop\shubham-rawat\practice\Practice\obj\Debug\net6.0\refi
 C:\Users\GPCTAdmin\Desktop\shubham-rawat\practice\Practice\obj\Debug\net6.0\Practice.pdb
 C:\Users\GPCTAdmin\Desktop\shubham-rawat\practice\Practice\obj\Debug\net6.0\Practice.genruntimeconfig.cache
 C:\Users\GPCTAdmin\Desktop\shubham-rawat\practice\Practice\obj\Debug\net6.0\ref\Practice.dll
+C:\Users\GPCTAdmin\Desktop\shubham-rawat\practice\Practice\obj\Debug\net6.0\Practice.Resource1.resources
+C:\Users\GPCTAdmin\Desktop\shubham-rawat\practice\Practice\obj\Debug\net6.0\Practice.csproj.GenerateResource.cache

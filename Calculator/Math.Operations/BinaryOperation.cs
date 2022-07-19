@@ -9,7 +9,7 @@ namespace Math.Operations
     {
         public BinaryOperation()
         {
-            base.OperandCount = 2;
+            OperandCount = 2;
         }
 
     }

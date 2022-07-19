@@ -9,15 +9,15 @@ namespace Math.Operations
     {
         protected override double Calculate(double[] operands)
         {
-            double num = operands[0];
+            double number = operands[0];
             double @base = operands[1];
-            double result = CalulateLog(num, @base);
+            double result = CalulateLog(number, @base);
             return result;
         }
 
-        private double CalulateLog(double a, double b)
+        private double CalulateLog(double number, double @base)
         {
-            return (a > b-1) ? 1 + CalulateLog(a/b, b) : 0;
+            return (number > @base - 1) ? 1 + CalulateLog(number/ @base, @base) : 0;
         }
     }
 }

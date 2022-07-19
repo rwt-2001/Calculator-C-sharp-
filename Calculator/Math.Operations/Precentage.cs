@@ -5,18 +5,12 @@ using System.Text;
 
 namespace Math.Operations
 {
-    public class LogNatural :UnaryOperation
+    public class Precentage : BinaryOperation
     {
-
         protected override double Calculate(double[] operands)
         {
-            double result = CalculateLog(operands[0]);
+            double result = operands[0] * (operands[1] / 100);
             return result;
-        }
-
-        private double CalculateLog(double number)
-        {
-            return (number>1) ? 1 + CalculateLog(number/2) : 0; 
         }
     }
 }

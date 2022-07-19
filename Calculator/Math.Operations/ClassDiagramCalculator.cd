@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Math.Operations.Multiplication">
-    <Position X="14.25" Y="3.5" Width="1.5" />
+    <Position X="13.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Multiplication.cs</FileName>
@@ -66,7 +66,7 @@
   <Class Name="Math.Operations.ExpressionEvaluator">
     <Position X="1.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgEAAAQACAAgAAAAAAAAAAAAAACAABAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgEAAAQACAIgAAAAAAAAAAAEAACAAAAAA=</HashCode>
       <FileName>ExpressionEvaluator.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -78,7 +78,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Math.Operations.Log">
-    <Position X="16.5" Y="3.5" Width="1.5" />
+    <Position X="15.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAEAAAAAAAAAAA=</HashCode>
       <FileName>Log.cs</FileName>
@@ -96,6 +96,27 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAQAAAAgAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Operation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Math.Operations.ExpressionToken">
+    <Position X="1.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAgA=</HashCode>
+      <FileName>ExpressionToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Math.Operations.OperandMismatchException">
+    <Position X="3.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OperandMismatchException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Math.Operations.Precentage">
+    <Position X="17.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Precentage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
