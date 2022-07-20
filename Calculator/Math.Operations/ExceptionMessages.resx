@@ -126,4 +126,7 @@
   <data name="OPERANDMISMATCHEXCEPTION" xml:space="preserve">
     <value>Operands given is not equal to number of operands reqired</value>
   </data>
+  <data name="UNDEFINEDOPERATIONEXCEPTION" xml:space="preserve">
+    <value>Operation not defined :</value>
+  </data>
 </root>

@@ -35,6 +35,10 @@ namespace Math.Operations
             {
                 throw ex;
             }
+            catch (UndefinedOperationException ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
                 throw new InvalidExpressionException();
@@ -57,10 +61,7 @@ namespace Math.Operations
             
             if (_operationDictionary.ContainsKey(@operator))
                 _operationDictionary.Remove(@operator);
-            else
-            {
-                //TODO : inform user that the operator was not present
-            }
+            
         }
 
         /* Methd to change precedence of an operation */
@@ -190,6 +191,7 @@ namespace Math.Operations
 
         }
 
+        /* Method to evaluate the result from the postfix expression */
         private double GetResult (List<ExpressionToken> postfix) 
         {
             Stack<double> result = new Stack<double>();
@@ -203,8 +205,15 @@ namespace Math.Operations
                 else
                 {
 
-                    Operation newOperator = _operationDictionary[postfix[i].Value].OperationType;
-
+                    Operation newOperator;
+                    try
+                    {
+                        newOperator = _operationDictionary[postfix[i].Value].OperationType;
+                    }
+                    catch(Exception e) 
+                    {
+                        throw new UndefinedOperationException(postfix[i].Value);
+                    }
                     int operandsCount = newOperator.OperandCount;
                     double[] operands = new double[operandsCount];
 

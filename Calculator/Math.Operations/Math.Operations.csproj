@@ -72,6 +72,7 @@
     <Compile Include="Square.cs" />
     <Compile Include="Subtraction.cs" />
     <Compile Include="UnaryOperation.cs" />
+    <Compile Include="UndefinedOperationException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagramCalculator.cd" />

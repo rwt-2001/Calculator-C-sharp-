@@ -127,10 +127,17 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Math.Operations.InvalidExpressionException">
-    <Position X="8.5" Y="11.75" Width="1.5" />
+    <Position X="8" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>InvalidExpressionException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Math.Operations.UndefinedOperationException">
+    <Position X="10.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UndefinedOperationException.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

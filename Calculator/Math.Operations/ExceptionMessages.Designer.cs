@@ -86,5 +86,14 @@ namespace Math.Operations {
                 return ResourceManager.GetString("OPERANDMISMATCHEXCEPTION", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operation not defined :.
+        /// </summary>
+        internal static string UNDEFINEDOPERATIONEXCEPTION {
+            get {
+                return ResourceManager.GetString("UNDEFINEDOPERATIONEXCEPTION", resourceCulture);
+            }
+        }
     }
 }

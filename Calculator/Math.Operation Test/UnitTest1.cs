@@ -34,6 +34,9 @@ namespace Math.Operation_Test
 
             /* Check for divide by 0 */
             exception = Assert.ThrowsException<DivideByZeroException>(() => Calculator.Evaluate("4/(2-2)"));
+
+            /* Check Undefined Operation */
+            exception = Assert.ThrowsException<UndefinedOperationException>(() => Calculator.Evaluate("4//2"));
         }
     }
 }
