@@ -124,7 +124,7 @@
     <value>1</value>
   </data>
   <data name="DIVIDE_OPERATOR" xml:space="preserve">
-    <value>*</value>
+    <value>/</value>
   </data>
   <data name="DIVIDE_PRECEDENCE" xml:space="preserve">
     <value>10</value>

@@ -1,8 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Practice;
-using System;
-using System.Collections;
-using System.Text.RegularExpressions;
 
 public enum Token
 {
@@ -138,7 +135,7 @@ class ClassPractice
     static void Main()
     {
         // Mathematical Expression
-        string expressionstr = "((3.1+8.36)*(2)*(100/10)) + 10%" ;
+        string expressionstr = "50 + 10% * 2";
      
 
         List<ExpressionToken> infix = GetInfixList(expressionstr);
@@ -181,12 +178,13 @@ class ClassPractice
 
     //Method to form infix list of type object
 
-  
+
     static public List<ExpressionToken> GetInfixList(string expressionstr)
     {
 
         List<ExpressionToken> infix = new List<ExpressionToken>();
         int j;
+        int trackBrackets = 0;
 
         /*
          * 
@@ -219,7 +217,8 @@ class ClassPractice
                  */
                 if (expressionstr[i].ToString() == "(" || expressionstr[i].ToString() == ")")
                 {
-                    
+                    if (expressionstr[i].ToString() == "(") trackBrackets++;
+                    else trackBrackets--;
                     infix.Add(new ExpressionToken(Token.Operator, expressionstr[i].ToString()));
                     Console.WriteLine(expressionstr[i]);
                 }
@@ -238,10 +237,9 @@ class ClassPractice
                     i = j - 1;
                 }
             }
-
-
-
         }
+        if (trackBrackets != 0)
+            throw new Exception("All brackets are not closed");
         return infix;
     }
 
@@ -341,9 +339,9 @@ class ClassPractice
                 
                 
             }
+        
 
-
-        }
+        }       
 
 
         Console.WriteLine("Answer : " + Math.Round(result.Peek(),3));

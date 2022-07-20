@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Operations", "Math.Operations.csproj", "{98136A99-9ACA-4629-BDE2-17E5ED77C497}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Operation Test", "..\Math.Operation Test\Math.Operation Test.csproj", "{A82E34AE-15A9-4BD4-849E-E753EE8E7C34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{98136A99-9ACA-4629-BDE2-17E5ED77C497}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98136A99-9ACA-4629-BDE2-17E5ED77C497}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98136A99-9ACA-4629-BDE2-17E5ED77C497}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A82E34AE-15A9-4BD4-849E-E753EE8E7C34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A82E34AE-15A9-4BD4-849E-E753EE8E7C34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A82E34AE-15A9-4BD4-849E-E753EE8E7C34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A82E34AE-15A9-4BD4-849E-E753EE8E7C34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

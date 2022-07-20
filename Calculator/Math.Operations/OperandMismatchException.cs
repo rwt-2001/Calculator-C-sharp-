@@ -8,7 +8,7 @@ namespace Math.Operations
     public class OperandMismatchException :Exception
     {
 
-        public OperandMismatchException() : base("Operands given is not equal to number of operands reqired") { }
+        public OperandMismatchException() : base(ExceptionMessages.OPERANDMISMATCHEXCEPTION) { }
   
     }
 }

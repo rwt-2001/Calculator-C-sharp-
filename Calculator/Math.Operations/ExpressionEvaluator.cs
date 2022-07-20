@@ -6,18 +6,18 @@ namespace Math.Operations
 {
     public class ExpressionEvaluator
     {
-        private Dictionary<string, OperatorPrecedence> _operationDictionary;
+        private Dictionary<string, OperatorPrecedence> _operationDictionary = new Dictionary<string, OperatorPrecedence>();
         
         /*Constructor to Initialize the dictionary for basic operations*/
         public ExpressionEvaluator()
         {
-            RegisterOperation(OperatorAndPrecedence.ADD_OPERATOR, new Addition(), Convert.ToInt16(OperatorAndPrecedence.ADD_PRECEDENCE));
-            RegisterOperation(OperatorAndPrecedence.SUBTRACT_OPERATOR, new Subtraction(), Convert.ToInt16(OperatorAndPrecedence.SUBTRACT_PRECEDENCE));
-            RegisterOperation(OperatorAndPrecedence.MULTIPLY_OPERATOR, new Multiplication(), Convert.ToInt16(OperatorAndPrecedence.MULTIPLY_PRECEDENCE));
-            RegisterOperation(OperatorAndPrecedence.DIVIDE_OPERATOR, new Divide(), Convert.ToInt16(OperatorAndPrecedence.DIVIDE_PRECEDENCE));
-            RegisterOperation(OperatorAndPrecedence.FACTORIAL_OPERATOR, new Factorial(), Convert.ToInt16(OperatorAndPrecedence.FACTORIAL_PRECEDENCE));
-            RegisterOperation(OperatorAndPrecedence.POWER_OPERATOR, new Power(), Convert.ToInt16(OperatorAndPrecedence.POWER_PRECEDENCE));
-            RegisterOperation(OperatorAndPrecedence.PERCENTAGE_OPERATOR, new Precentage(), Convert.ToInt16(OperatorAndPrecedence.PERCENTAGE_PRECEDENCE));
+            RegisterOperation(OperatorAndPrecedence.ADD_OPERATOR, new Addition(), Convert.ToInt32(OperatorAndPrecedence.ADD_PRECEDENCE));
+            RegisterOperation(OperatorAndPrecedence.SUBTRACT_OPERATOR, new Subtraction(), Convert.ToInt32(OperatorAndPrecedence.SUBTRACT_PRECEDENCE));
+            RegisterOperation(OperatorAndPrecedence.MULTIPLY_OPERATOR, new Multiplication(), Convert.ToInt32(OperatorAndPrecedence.MULTIPLY_PRECEDENCE));
+            RegisterOperation(OperatorAndPrecedence.DIVIDE_OPERATOR, new Divide(), Convert.ToInt32(OperatorAndPrecedence.DIVIDE_PRECEDENCE));
+            RegisterOperation(OperatorAndPrecedence.FACTORIAL_OPERATOR, new Factorial(), Convert.ToInt32(OperatorAndPrecedence.FACTORIAL_PRECEDENCE));
+            RegisterOperation(OperatorAndPrecedence.POWER_OPERATOR, new Power(), Convert.ToInt32(OperatorAndPrecedence.POWER_PRECEDENCE));
+            RegisterOperation(OperatorAndPrecedence.PERCENTAGE_OPERATOR, new Precentage(), Convert.ToInt32(OperatorAndPrecedence.PERCENTAGE_PRECEDENCE));
         }
         
         /*Method to evaluate the expression given by user*/
@@ -26,7 +26,19 @@ namespace Math.Operations
             
             List<ExpressionToken> infix= GenerateTokens(expression);
             List<ExpressionToken> postfix = InfixToPostfix(infix);
-            double result = GetResult(postfix);
+            double result;
+            try
+            { 
+                result = GetResult(postfix);
+            }
+            catch (DivideByZeroException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidExpressionException();
+            }
             return result;
         }
 
@@ -67,6 +79,7 @@ namespace Math.Operations
 
             List<ExpressionToken> infix = new List<ExpressionToken>();
             int j;
+            int trackBrackets = 0;
 
             for (int i = 0; i < expression.Length; i++)
             {
@@ -92,7 +105,8 @@ namespace Math.Operations
 
                     if (expression[i].ToString() == "(" || expression[i].ToString() == ")")
                     {
-
+                        if(expression[i].ToString() == "(") trackBrackets++;
+                        else trackBrackets--;
                         infix.Add(new ExpressionToken(Token.Operator, expression[i].ToString()));
                     }
 
@@ -109,10 +123,9 @@ namespace Math.Operations
                         i = j - 1;
                     }
                 }
-
-
-
             }
+            if (trackBrackets != 0)
+                throw new ImproperBracketsException();
             return infix;
         }
      
@@ -177,7 +190,7 @@ namespace Math.Operations
 
         }
 
-        private double GetResult(List<ExpressionToken> postfix)
+        private double GetResult (List<ExpressionToken> postfix) 
         {
             Stack<double> result = new Stack<double>();
             for (int i = 0; i < postfix.Count; i++)
@@ -210,7 +223,7 @@ namespace Math.Operations
 
 
             }
-
+            if (result.Count != 1) throw new InvalidExpressionException();
 
             return result.Peek();
 

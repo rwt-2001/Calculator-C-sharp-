@@ -44,6 +44,8 @@
     <Compile Include="Addition.cs" />
     <Compile Include="BinaryOperation.cs" />
     <Compile Include="ExpressionToken.cs" />
+    <Compile Include="ImproperBracketsException.cs" />
+    <Compile Include="InvalidExpressionException.cs" />
     <Compile Include="OperandMismatchException.cs" />
     <Compile Include="OperatorPrecedence.cs" />
     <Compile Include="Divide.cs" />
@@ -62,6 +64,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OperatorAndPrecedence.resx</DependentUpon>
     </Compile>
+    <Compile Include="ExceptionMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionMessages.resx</DependentUpon>
+    </Compile>
     <Compile Include="Square.cs" />
     <Compile Include="Subtraction.cs" />
     <Compile Include="UnaryOperation.cs" />
@@ -73,6 +80,10 @@
     <EmbeddedResource Include="OperatorAndPrecedence.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>OperatorAndPrecedence.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExceptionMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

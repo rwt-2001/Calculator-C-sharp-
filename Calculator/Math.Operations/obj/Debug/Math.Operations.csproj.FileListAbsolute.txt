@@ -4,3 +4,6 @@ C:\Users\GPCTAdmin\Desktop\shubham-rawat\Calculator\Math.Operations\obj\Debug\Ma
 C:\Users\GPCTAdmin\Desktop\shubham-rawat\Calculator\Math.Operations\obj\Debug\Math.Operations.csproj.CoreCompileInputs.cache
 C:\Users\GPCTAdmin\Desktop\shubham-rawat\Calculator\Math.Operations\obj\Debug\Math.Operations.dll
 C:\Users\GPCTAdmin\Desktop\shubham-rawat\Calculator\Math.Operations\obj\Debug\Math.Operations.pdb
+C:\Users\GPCTAdmin\Desktop\shubham-rawat\Calculator\Math.Operations\obj\Debug\Math.Operations.OperatorAndPrecedence.resources
+C:\Users\GPCTAdmin\Desktop\shubham-rawat\Calculator\Math.Operations\obj\Debug\Math.Operations.csproj.GenerateResource.cache
+C:\Users\GPCTAdmin\Desktop\shubham-rawat\Calculator\Math.Operations\obj\Debug\Math.Operations.ExceptionMessages.resources

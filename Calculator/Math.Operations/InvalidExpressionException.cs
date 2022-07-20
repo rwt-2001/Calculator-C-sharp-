@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Math.Operations
+{
+    public class InvalidExpressionException :Exception
+    {
+        public InvalidExpressionException() : base(ExceptionMessages.INVALIDEXPRESSIONEXCEPTION)
+        {
+
+        }
+    }
+}
