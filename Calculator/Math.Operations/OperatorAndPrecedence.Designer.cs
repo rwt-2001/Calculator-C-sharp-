@@ -88,7 +88,7 @@ namespace Math.Operations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 10.
+        ///   Looks up a localized string similar to 2.
         /// </summary>
         internal static string DIVIDE_PRECEDENCE {
             get {
@@ -106,7 +106,7 @@ namespace Math.Operations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 15.
+        ///   Looks up a localized string similar to 3.
         /// </summary>
         internal static string FACTORIAL_PRECEDENCE {
             get {
@@ -124,7 +124,7 @@ namespace Math.Operations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 10.
+        ///   Looks up a localized string similar to 2.
         /// </summary>
         internal static string MULTIPLY_PRECEDENCE {
             get {
@@ -142,7 +142,7 @@ namespace Math.Operations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 15.
+        ///   Looks up a localized string similar to 3.
         /// </summary>
         internal static string PERCENTAGE_PRECEDENCE {
             get {
@@ -160,7 +160,7 @@ namespace Math.Operations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 15.
+        ///   Looks up a localized string similar to 3.
         /// </summary>
         internal static string POWER_PRECEDENCE {
             get {

@@ -1,0 +1,30 @@
+{
+  "Addition": {
+    "OperatorSymbol": "+",
+    "OperatorPrecedence": 1
+  },
+  "Subtraction": {
+    "OperatorSymbol": "-",
+    "OperatorPrecedence": 1
+  },
+  "Divide": {
+    "OperatorSymbol": "/",
+    "OperatorPrecedence": 2
+  },
+  "Multiplication": {
+    "OperatorSymbol": "*",
+    "OperatorPrecedence": 2
+  },
+  "Factorial": {
+    "OperatorSymbol": "!",
+    "OperatorPrecedence": 3
+  },
+  "Power": {
+    "OperatorSymbol": "^",
+    "OperatorPrecedence": 3
+  },
+  "Precentage": {
+    "OperatorSymbol": "%",
+    "OperatorPrecedence": 3
+  }
+}

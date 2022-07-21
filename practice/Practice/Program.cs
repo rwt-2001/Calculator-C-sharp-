@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Practice;
-
+using System.Configuration;
+using System.Collections.Specialized;
 public enum Token
 {
     Operator, Operand
