@@ -16,6 +16,7 @@ C:\Users\GPCTAdmin\Desktop\shubham-rawat-final\Calculator\Math.Operations\obj\De
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-final\Calculator\Math.Operations\obj\Debug\Math.Operations.csproj.CoreCompileInputs.cache
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-final\Calculator\Math.Operations\obj\Debug\Math.Operations.dll
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-final\Calculator\Math.Operations\obj\Debug\Math.Operations.pdb
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\bin\Debug\operatorsConfiguration.json
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\bin\Debug\Math.Operations.dll
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\bin\Debug\Math.Operations.pdb
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
@@ -39,11 +40,10 @@ C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\bin\Deb
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\bin\Debug\System.ValueTuple.xml
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\obj\Debug\Math.Operations.csproj.AssemblyReference.cache
-C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\obj\Debug\Math.Operations.OperatorAndPrecedence.resources
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\obj\Debug\Math.Operations.ExceptionMessages.resources
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\obj\Debug\Math.Operations.csproj.GenerateResource.cache
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\obj\Debug\Math.Operations.csproj.CoreCompileInputs.cache
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\obj\Debug\Math.Operations.csproj.CopyComplete
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\obj\Debug\Math.Operations.dll
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\obj\Debug\Math.Operations.pdb
-C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\bin\Debug\operatorsConfiguration.json
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operations\obj\Debug\Math.Operations.Strings.resources

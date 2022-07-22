@@ -66,7 +66,7 @@
   <Class Name="Math.Operations.ExpressionEvaluator">
     <Position X="1.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAAAAAAgEAAAQACAIgAAAAAAAAAAAEAACAAAAAA=</HashCode>
+      <HashCode>AAAEAgAAAAAgEAAAQADAIgAAAAAAAAAAAEAACAAAACA=</HashCode>
       <FileName>ExpressionEvaluator.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -105,13 +105,6 @@
       <FileName>ExpressionToken.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Math.Operations.OperandMismatchException">
-    <Position X="3.75" Y="11.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>OperandMismatchException.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Math.Operations.Precentage">
     <Position X="17.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
@@ -119,32 +112,18 @@
       <FileName>Precentage.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Math.Operations.ImproperBracketsException">
-    <Position X="6" Y="11.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ImproperBracketsException.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Math.Operations.InvalidExpressionException">
-    <Position X="8" Y="11.5" Width="1.5" />
+    <Position X="6" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>InvalidExpressionException.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Math.Operations.UndefinedOperationException">
-    <Position X="10.5" Y="11.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>UndefinedOperationException.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Math.Operations.Operator">
-    <Position X="3.75" Y="13.75" Width="1.5" />
+  <Class Name="Math.Operations.OperatorInfo">
+    <Position X="3.75" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
-      <FileName>Operator.cs</FileName>
+      <FileName>OperatorInfo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -26,5 +26,9 @@
   "Precentage": {
     "OperatorSymbol": "%",
     "OperatorPrecedence": 3
+  },
+  "LogN": {
+    "OperatorSymbol": "ln",
+    "OperatorPrecedence":  3
   }
 }

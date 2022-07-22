@@ -6,9 +6,10 @@ namespace Math.Operations
     public class InvalidExpressionException :Exception
     {
         /* Exception that will be thrown if the given expression is not valid */
-        public InvalidExpressionException() : base(ExceptionMessages.INVALIDEXPRESSIONEXCEPTION)
-        {
+        public InvalidExpressionException() { }
+        public InvalidExpressionException(string message) : base(message) { }
 
-        }
+        
+
     }
 }

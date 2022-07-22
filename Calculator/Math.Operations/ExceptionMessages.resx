@@ -117,16 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="IMPROPERBRACKETEXCEPTION" xml:space="preserve">
+  <data name="FILENOTPRESENT" xml:space="preserve">
+    <value>OperatorsConfiguration.json file is not present</value>
+  </data>
+  <data name="IMPROPERBRACKET" xml:space="preserve">
     <value>Improper Bracket Format</value>
   </data>
-  <data name="INVALIDEXPRESSIONEXCEPTION" xml:space="preserve">
-    <value>Invalid Expression</value>
+  <data name="INVALIDEXPRESSION" xml:space="preserve">
+    <value>Given expression is not valid</value>
   </data>
-  <data name="OPERANDMISMATCHEXCEPTION" xml:space="preserve">
+  <data name="INVALIDPRIORITYEXCEPTION" xml:space="preserve">
+    <value>Operation priority must be within 1 to 3</value>
+  </data>
+  <data name="NULLOBJECTEXCEPTION" xml:space="preserve">
+    <value>Operation object can't be null</value>
+  </data>
+  <data name="OPERANDMISMATCH" xml:space="preserve">
     <value>Operands given is not equal to number of operands reqired</value>
   </data>
-  <data name="UNDEFINEDOPERATIONEXCEPTION" xml:space="preserve">
-    <value>Operation not defined :</value>
+  <data name="OPERATORNOTPRESENT" xml:space="preserve">
+    <value>Operator is not present</value>
+  </data>
+  <data name="OPERATORPRESENTEXCEPTION" xml:space="preserve">
+    <value>Operator Already present</value>
+  </data>
+  <data name="UNDEFINEDOPERATION" xml:space="preserve">
+    <value>Operation not defined : </value>
   </data>
 </root>

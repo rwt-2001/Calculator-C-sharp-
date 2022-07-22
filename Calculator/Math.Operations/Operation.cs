@@ -15,7 +15,7 @@ namespace Math.Operations
             if (operands == null || operands.Length != OperandCount)
             {
 
-                throw new OperandMismatchException();
+                throw new InvalidExpressionException(ExceptionMessages.OPERANDMISMATCH);
 
             }
 

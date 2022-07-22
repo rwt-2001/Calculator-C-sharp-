@@ -117,46 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ADD_OPERATOR" xml:space="preserve">
-    <value>+</value>
+  <data name="ADDITION" xml:space="preserve">
+    <value>Addition</value>
   </data>
-  <data name="ADD_PRECEDENCE" xml:space="preserve">
-    <value>1</value>
+  <data name="DIVIDE" xml:space="preserve">
+    <value>Divide</value>
   </data>
-  <data name="DIVIDE_OPERATOR" xml:space="preserve">
-    <value>/</value>
+  <data name="FACTORIAL" xml:space="preserve">
+    <value>Factorial</value>
   </data>
-  <data name="DIVIDE_PRECEDENCE" xml:space="preserve">
-    <value>2</value>
+  <data name="MULTIPICATION" xml:space="preserve">
+    <value>Multiplication</value>
   </data>
-  <data name="FACTORIAL_OPERATOR" xml:space="preserve">
-    <value>!</value>
+  <data name="OPERATOR_FILE_PATH" xml:space="preserve">
+    <value>operatorsConfiguration.json</value>
   </data>
-  <data name="FACTORIAL_PRECEDENCE" xml:space="preserve">
-    <value>3</value>
+  <data name="POWER" xml:space="preserve">
+    <value>Power</value>
   </data>
-  <data name="MULTIPLY_OPERATOR" xml:space="preserve">
-    <value>*</value>
+  <data name="PRECENTAGE" xml:space="preserve">
+    <value>Precentage</value>
   </data>
-  <data name="MULTIPLY_PRECEDENCE" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="PERCENTAGE_OPERATOR" xml:space="preserve">
-    <value>%</value>
-  </data>
-  <data name="PERCENTAGE_PRECEDENCE" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="POWER_OPERATOR" xml:space="preserve">
-    <value>^</value>
-  </data>
-  <data name="POWER_PRECEDENCE" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="SUBTRACT_OPERATOR" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="SUBTRACT_PRECEDENCE" xml:space="preserve">
-    <value>1</value>
+  <data name="SUBTRACTION" xml:space="preserve">
+    <value>Subtraction</value>
   </data>
 </root>

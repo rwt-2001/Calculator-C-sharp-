@@ -198,13 +198,14 @@ C:\Users\GPCTAdmin\Desktop\shubham-rawat-final\Calculator\Math.Operation Test\ob
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-final\Calculator\Math.Operation Test\obj\Debug\net6.0\Math.Operation Test.pdb
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-final\Calculator\Math.Operation Test\obj\Debug\net6.0\Math.Operation Test.genruntimeconfig.cache
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-final\Calculator\Math.Operation Test\obj\Debug\net6.0\ref\Math.Operation Test.dll
-C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\bin\Debug\net6.0\testhost.exe
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\bin\Debug\net6.0\testhost.dll
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\bin\Debug\net6.0\testhost.exe
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\bin\Debug\net6.0\Microsoft.TestPlatform.AdapterUtilities.dll
-C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\bin\Debug\net6.0\operatorsConfiguration.json
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\bin\Debug\net6.0\Math.Operation Test.deps.json
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\bin\Debug\net6.0\Math.Operation Test.runtimeconfig.json
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\bin\Debug\net6.0\Math.Operation Test.dll
@@ -299,4 +300,3 @@ C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\obj
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\obj\Debug\net6.0\Math.Operation Test.pdb
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\obj\Debug\net6.0\Math.Operation Test.genruntimeconfig.cache
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\obj\Debug\net6.0\ref\Math.Operation Test.dll
-C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Math.Operation Test\bin\Debug\net6.0\operatorsConfiguration.json

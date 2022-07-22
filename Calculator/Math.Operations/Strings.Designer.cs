@@ -22,14 +22,14 @@ namespace Math.Operations {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ExceptionMessages {
+    internal class Strings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ExceptionMessages() {
+        internal Strings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Math.Operations {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Math.Operations.ExceptionMessages", typeof(ExceptionMessages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Math.Operations.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,83 +61,74 @@ namespace Math.Operations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OperatorsConfiguration.json file is not present.
+        ///   Looks up a localized string similar to Addition.
         /// </summary>
-        internal static string FILENOTPRESENT {
+        internal static string ADDITION {
             get {
-                return ResourceManager.GetString("FILENOTPRESENT", resourceCulture);
+                return ResourceManager.GetString("ADDITION", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Improper Bracket Format.
+        ///   Looks up a localized string similar to Divide.
         /// </summary>
-        internal static string IMPROPERBRACKET {
+        internal static string DIVIDE {
             get {
-                return ResourceManager.GetString("IMPROPERBRACKET", resourceCulture);
+                return ResourceManager.GetString("DIVIDE", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Given expression is not valid.
+        ///   Looks up a localized string similar to Factorial.
         /// </summary>
-        internal static string INVALIDEXPRESSION {
+        internal static string FACTORIAL {
             get {
-                return ResourceManager.GetString("INVALIDEXPRESSION", resourceCulture);
+                return ResourceManager.GetString("FACTORIAL", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Operation priority must be within 1 to 3.
+        ///   Looks up a localized string similar to Multiplication.
         /// </summary>
-        internal static string INVALIDPRIORITYEXCEPTION {
+        internal static string MULTIPICATION {
             get {
-                return ResourceManager.GetString("INVALIDPRIORITYEXCEPTION", resourceCulture);
+                return ResourceManager.GetString("MULTIPICATION", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Operation object can&apos;t be null.
+        ///   Looks up a localized string similar to operatorsConfiguration.json.
         /// </summary>
-        internal static string NULLOBJECTEXCEPTION {
+        internal static string OPERATOR_FILE_PATH {
             get {
-                return ResourceManager.GetString("NULLOBJECTEXCEPTION", resourceCulture);
+                return ResourceManager.GetString("OPERATOR_FILE_PATH", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Operands given is not equal to number of operands reqired.
+        ///   Looks up a localized string similar to Power.
         /// </summary>
-        internal static string OPERANDMISMATCH {
+        internal static string POWER {
             get {
-                return ResourceManager.GetString("OPERANDMISMATCH", resourceCulture);
+                return ResourceManager.GetString("POWER", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Operator is not present.
+        ///   Looks up a localized string similar to Precentage.
         /// </summary>
-        internal static string OPERATORNOTPRESENT {
+        internal static string PRECENTAGE {
             get {
-                return ResourceManager.GetString("OPERATORNOTPRESENT", resourceCulture);
+                return ResourceManager.GetString("PRECENTAGE", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Operator Already present.
+        ///   Looks up a localized string similar to Subtraction.
         /// </summary>
-        internal static string OPERATORPRESENTEXCEPTION {
+        internal static string SUBTRACTION {
             get {
-                return ResourceManager.GetString("OPERATORPRESENTEXCEPTION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Operation not defined : .
-        /// </summary>
-        internal static string UNDEFINEDOPERATION {
-            get {
-                return ResourceManager.GetString("UNDEFINEDOPERATION", resourceCulture);
+                return ResourceManager.GetString("SUBTRACTION", resourceCulture);
             }
         }
     }

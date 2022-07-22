@@ -1,15 +1,15 @@
-﻿using System.Text.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
-
+using Newtonsoft.Json;
+using Math.Operations;
 namespace Math.Operations
 {
     public class ExpressionEvaluator
     {
         private Dictionary<string, OperatorPrecedence> _operationDictionary = new Dictionary<string, OperatorPrecedence>();
-        private Dictionary<string, Operator> _operatorSymbolPrecedenceDictionary = new Dictionary<string, Operator>();
-        private const string _configurationFilePath = "./operatorsConfiguration.json";
+        private Dictionary<string, OperatorInfo> _operatorSymbolPrecedenceDictionary = new Dictionary<string, OperatorInfo>();
+        private string _configurationFilePath = Strings.OPERATOR_FILE_PATH;
 
         /*Constructor to Initialize the dictionary for basic operations*/
         public ExpressionEvaluator()
@@ -18,14 +18,14 @@ namespace Math.Operations
             string fileContent = ReadJsonFile();
 
             /* Deserialize fileContent into dictionary */
-            _operatorSymbolPrecedenceDictionary = JsonSerializer.Deserialize<Dictionary<string, Operator>>(fileContent);
-            RegisterOperation(_operatorSymbolPrecedenceDictionary["Addition"].OperatorSymbol, new Addition(), _operatorSymbolPrecedenceDictionary["Addition"].OperatorPrecedence);
-            RegisterOperation(_operatorSymbolPrecedenceDictionary["Subtraction"].OperatorSymbol, new Subtraction(), _operatorSymbolPrecedenceDictionary["Subtraction"].OperatorPrecedence);
-            RegisterOperation(_operatorSymbolPrecedenceDictionary["Multiplication"].OperatorSymbol, new Multiplication(), _operatorSymbolPrecedenceDictionary["Multiplication"].OperatorPrecedence);
-            RegisterOperation(_operatorSymbolPrecedenceDictionary["Divide"].OperatorSymbol, new Divide(), _operatorSymbolPrecedenceDictionary["Divide"].OperatorPrecedence);
-            RegisterOperation(_operatorSymbolPrecedenceDictionary["Factorial"].OperatorSymbol , new Factorial(), _operatorSymbolPrecedenceDictionary["Factorial"].OperatorPrecedence);
-            RegisterOperation(_operatorSymbolPrecedenceDictionary["Power"].OperatorSymbol, new Power(), _operatorSymbolPrecedenceDictionary["Power"].OperatorPrecedence);
-            RegisterOperation(_operatorSymbolPrecedenceDictionary["Precentage"].OperatorSymbol, new Precentage(), _operatorSymbolPrecedenceDictionary["Precentage"].OperatorPrecedence);
+            _operatorSymbolPrecedenceDictionary = JsonConvert.DeserializeObject<Dictionary<string, OperatorInfo>>(fileContent);
+            RegisterOperation(_operatorSymbolPrecedenceDictionary[Strings.ADDITION].OperatorSymbol, new Addition(), _operatorSymbolPrecedenceDictionary[Strings.ADDITION].OperatorPrecedence);
+            RegisterOperation(_operatorSymbolPrecedenceDictionary[Strings.SUBTRACTION].OperatorSymbol, new Subtraction(), _operatorSymbolPrecedenceDictionary[Strings.SUBTRACTION].OperatorPrecedence);
+            RegisterOperation(_operatorSymbolPrecedenceDictionary[Strings.MULTIPICATION].OperatorSymbol, new Multiplication(), _operatorSymbolPrecedenceDictionary[Strings.MULTIPICATION].OperatorPrecedence);
+            RegisterOperation(_operatorSymbolPrecedenceDictionary[Strings.DIVIDE].OperatorSymbol, new Divide(), _operatorSymbolPrecedenceDictionary[Strings.DIVIDE].OperatorPrecedence);
+            RegisterOperation(_operatorSymbolPrecedenceDictionary[Strings.FACTORIAL].OperatorSymbol , new Factorial(), _operatorSymbolPrecedenceDictionary[Strings.FACTORIAL].OperatorPrecedence);
+            RegisterOperation(_operatorSymbolPrecedenceDictionary[Strings.POWER].OperatorSymbol, new Power(), _operatorSymbolPrecedenceDictionary[Strings.POWER].OperatorPrecedence);
+            RegisterOperation(_operatorSymbolPrecedenceDictionary[Strings.PRECENTAGE].OperatorSymbol, new Precentage(), _operatorSymbolPrecedenceDictionary[Strings.PRECENTAGE].OperatorPrecedence);
         }
         
 
@@ -34,22 +34,23 @@ namespace Math.Operations
         {
             try
             {
-                StreamReader readFile = new StreamReader(_configurationFilePath);
-                return readFile.ReadToEnd();
+                string content = File.ReadAllText(_configurationFilePath);
+                return content;
             }
             catch
             {
-                throw new Exception("OperatorsConfiguration.json is not present");
+                /* Throw error if file is not present in the given path */
+                throw new Exception(ExceptionMessages.FILENOTPRESENT);
             }
             
             
         }
 
-        /* Method added newly added operatorsymbol and precedence to json file */
-        private void AddNewOperator()
+        /* Method adds newly changed precedence to json file */
+        private void ChangeOperatorsData()
         {
-            string content = JsonSerializer.Serialize(_operatorSymbolPrecedenceDictionary);
-            File.WriteAllText(_configurationFilePath, content);
+            string dataToWrite = JsonConvert.SerializeObject(_operatorSymbolPrecedenceDictionary);
+            File.WriteAllText(_configurationFilePath, dataToWrite);
         }
 
         /*Method to evaluate the expression given by user*/
@@ -65,28 +66,26 @@ namespace Math.Operations
         /* Method to register new operation*/
         public void RegisterOperation(string @operator, Operation  operationObject, int operationPriority)
         {
+            
 
             if (_operationDictionary.ContainsKey(@operator))
             {
-                throw new Exception("Operator Already present");
+                throw new Exception(ExceptionMessages.OPERATORPRESENTEXCEPTION);
             }
             else if(operationObject == null)
             {
-                throw new Exception("Operation type object can't be null");
+                throw new Exception(ExceptionMessages.NULLOBJECTEXCEPTION);
             }
             else if(operationPriority <0 || operationPriority > 3)
             {
-                throw new Exception("Operation priority must be within 1 to 3");
+                throw new Exception(ExceptionMessages.INVALIDPRIORITYEXCEPTION);
             }
 
             _operationDictionary.Add(@operator, new OperatorPrecedence(operationObject,operationPriority));
+            /* If the operation and its precedence already present in configuration file then just return otherwise add
+             * that new operator into operatorcongifuration file
+             */
             
-            Operator newOperator = new Operator();
-            newOperator.OperatorPrecedence = operationPriority;
-            newOperator.OperatorSymbol = @operator;
-
-            _operatorSymbolPrecedenceDictionary.Add(@operator, newOperator);
-
 
         }
 
@@ -97,18 +96,22 @@ namespace Math.Operations
             if (_operationDictionary.ContainsKey(@operator))
                 _operationDictionary.Remove(@operator);
             else{
-                throw new Exception("Operator not present");
+                throw new Exception(ExceptionMessages.OPERATORNOTPRESENT);
             }
             
         }
 
         /* Method to change precedence of an operation */
-        public void ChangePrecedence(string @operator, int operationPrecedence)
+        public bool ChangePrecedence(string operationName, int newOperationPrecedence)
         {
-            if(_operationDictionary.ContainsKey(@operator))
-            _operationDictionary[@operator].Precedence = operationPrecedence;
-            
+            string @operatorSymbol = _operatorSymbolPrecedenceDictionary[operationName].OperatorSymbol;
+            if (!_operationDictionary.ContainsKey(@operatorSymbol)) throw new Exception(ExceptionMessages.OPERATORNOTPRESENT);
+           
+            _operationDictionary[@operatorSymbol].Precedence = newOperationPrecedence;
+            _operatorSymbolPrecedenceDictionary[operationName].OperatorPrecedence = newOperationPrecedence; 
 
+            ChangeOperatorsData();
+            return true;
         }
 
         
@@ -126,15 +129,13 @@ namespace Math.Operations
                 if ((expression[index] >= '0' && expression[index] <= '9'))
                 {
                     currentindex = index;
-                    string operand = "";
+                    string operand = String.Empty;
                     while (currentindex < expression.Length && ((expression[currentindex] >= '0' && expression[currentindex] <= '9') || expression[currentindex] == '.') && expression[currentindex] != ' ')
                     {
                         operand += expression[currentindex];
                         currentindex++;
                     }
                     index = currentindex - 1;
-
-
 
                     infixExpression.Add(new ExpressionToken(Token.Operand, operand));
                 }
@@ -151,9 +152,14 @@ namespace Math.Operations
 
                     else
                     {
-                        string @operator = "";
+                        string @operator = String.Empty;
                         currentindex = index;
-                        while (currentindex < expression.Length && !(expression[currentindex] >= '0' && expression[currentindex] <= '9') && expression[currentindex] != ' ' && expression[currentindex] != ')' && expression[currentindex] != '(')
+                        while (currentindex < expression.Length 
+                            && !(expression[currentindex] >= '0' 
+                            && expression[currentindex] <= '9') 
+                            && expression[currentindex] != ' ' 
+                            && expression[currentindex] != ')' 
+                            && expression[currentindex] != '(')
                         {
                             @operator += expression[currentindex];
                             currentindex++;
@@ -164,7 +170,7 @@ namespace Math.Operations
                 }
             }
             if (trackBrackets != 0)
-                throw new ImproperBracketsException();
+                throw new InvalidExpressionException(ExceptionMessages.IMPROPERBRACKET);
             return infixExpression;
         }
      
@@ -242,7 +248,6 @@ namespace Math.Operations
 
                 else
                 {
-
                     Operation newOperator;
                     try
                     {
@@ -250,7 +255,7 @@ namespace Math.Operations
                     }
                     catch 
                     {
-                        throw new UndefinedOperationException(postfix[i].Value);
+                        throw new InvalidExpressionException(ExceptionMessages.UNDEFINEDOPERATION + postfix[i].Value);
                     }
                     int operandsCount = newOperator.OperandCount;
                     double[] operands = new double[operandsCount];
@@ -263,7 +268,7 @@ namespace Math.Operations
                         }
                         catch
                         {
-                            throw new InvalidExpressionException();
+                            throw new InvalidExpressionException(ExceptionMessages.INVALIDEXPRESSION);
                         }
                         
                         result.Pop();
@@ -278,7 +283,7 @@ namespace Math.Operations
 
 
             }
-            if (result.Count != 1) throw new InvalidExpressionException();
+            if (result.Count != 1) throw new InvalidExpressionException(ExceptionMessages.INVALIDEXPRESSION);
 
             return result.Peek();
 
