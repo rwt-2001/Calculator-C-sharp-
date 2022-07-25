@@ -70,6 +70,24 @@ namespace Calculator_UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to (.
+        /// </summary>
+        internal static string BRACKETLEFT {
+            get {
+                return ResourceManager.GetString("BRACKETLEFT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ).
+        /// </summary>
+        internal static string BRACKETRIGHT {
+            get {
+                return ResourceManager.GetString("BRACKETRIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ButtonsConfig.json.
         /// </summary>
         internal static string BUTTONCONFIGFILEPATH {

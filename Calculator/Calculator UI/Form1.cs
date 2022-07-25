@@ -14,10 +14,11 @@ namespace Calculator_UI
         private TextBox _textBox;
         private Dictionary<string, ButtonInfo> _buttonsInfo = new Dictionary<string, ButtonInfo>();
         private Dictionary<string, Button> _buttons = new Dictionary<string, Button>();
-        private Button _testButton;
+        
         private bool _binaryUsed = false;
         private bool _unaryUsed = false;
         private bool _dotUsed = false;
+        private int _trackBrackets = 0;
         private string[] _unaryOperators;
         private ExpressionEvaluator _evaluator = new ExpressionEvaluator();
 
@@ -46,9 +47,6 @@ namespace Calculator_UI
                 newButton.Click += AddToExpression;
                 _buttons[buttonInfo.Name] = newButton; 
             }
-            
-
-
         }
         /* Add buttons to layout */
         private void AddButtonToLayout()
@@ -62,23 +60,51 @@ namespace Calculator_UI
         {
             string value = (sender as Button).Text;
             bool isNumeric = double.TryParse(value, out double numeric);
+            bool isBracket = (value == UIResources.BRACKETLEFT || value == UIResources.BRACKETRIGHT); 
+            bool isRightBracket = (value == UIResources.BRACKETRIGHT);
+            bool isLeftBracket = (value == UIResources.BRACKETLEFT);
             if ((isNumeric || value == UIResources.DOT) && !_unaryUsed )
             {
+                if (_textBox.Text.Length != 0 && _textBox.Text[_textBox.Text.Length - 1].ToString() == UIResources.BRACKETRIGHT) return;
                 if (_dotUsed && value == UIResources.DOT) return;
                 if(value == UIResources.DOT) _dotUsed = true;
                 _binaryUsed = false;
                 this._textBox.Text = this._textBox.Text == UIResources.ZEROSTRING ? value : _textBox.Text + value;
             }
-            if(value == "(" || value == ")" && !_binaryUsed)
+            else if( isBracket )
             {
-                if (_textBox.Text.Length != 0 && _textBox.Text[_textBox.Text.Length - 1].ToString() == UIResources.DOT) return;
+                if(isLeftBracket && _textBox.Text == UIResources.ZEROSTRING)
+                {
+                    _textBox.Text = value; 
+                    _trackBrackets++;
+                    return;
+                }
+                
+                /* If vallue = UIResources.BRACKETRIGHT then it add it to expression */
+                if (isRightBracket )
+                {
+                    if (_trackBrackets <= 0) return;
+                    _trackBrackets--;
+                    this._textBox.Text = this._textBox.Text == UIResources.ZEROSTRING ? value : _textBox.Text + value;
+                    return;
+                }
+
+                /* checks whether LeftBracket is not getting input after an operand  OR a Dot ( . ) */
+                else if (!((_textBox.Text.Length != 0 && _textBox.Text[_textBox.Text.Length - 1].ToString() == UIResources.BRACKETLEFT) || _binaryUsed)
+                        || _textBox.Text.Length != 0 && _textBox.Text[_textBox.Text.Length - 1].ToString() == UIResources.DOT) return;
+                else
+                {
+                    _trackBrackets++;
+                    _binaryUsed = false;
+                    _unaryUsed = false;
+                    this._textBox.Text = this._textBox.Text == UIResources.ZEROSTRING ? value : _textBox.Text + value;
+                }
                
-                _binaryUsed = false;
-                _unaryUsed = false;
-                this._textBox.Text = this._textBox.Text == UIResources.ZEROSTRING ? value : _textBox.Text + value;
             }
-            else if (!_binaryUsed && !isNumeric && value!=UIResources.DOT)
+            else if (!_binaryUsed && !isNumeric && value!=UIResources.DOT && !isBracket )
             {
+                /* If ( is on the left then don't add operator */
+                if (_textBox.Text.Length != 0 && _textBox.Text[_textBox.Text.Length - 1].ToString() == UIResources.BRACKETLEFT) return;
                 bool isUnary = _unaryOperators.Contains(value);
                 this._textBox.Text += isUnary ? value +  UIResources.SPACE : UIResources.SPACE + value + UIResources.SPACE;
                 _binaryUsed = isUnary?false:true;
@@ -107,7 +133,8 @@ namespace Calculator_UI
             _binaryUsed = false;
             _unaryUsed = false;
             _dotUsed = false;
-        }
+            _trackBrackets = 0;
+    }
         public Form1()
         {
             GetButtonInfo();
@@ -117,7 +144,6 @@ namespace Calculator_UI
         private void InitializeComponent()
         {
             this._textBox = new TextBox();
-            this._testButton = new Button();
             this.SuspendLayout();
             
             // 
@@ -130,14 +156,6 @@ namespace Calculator_UI
             this._textBox.TabIndex = 12;
             this._textBox.Text = UIResources.ZEROSTRING;
             this._textBox.TextAlign = HorizontalAlignment.Right;
-
-            // 
-            // _testButton
-            // 
-            this._testButton.Location = new Point(164, 199);
-            this._testButton.Name = "_testButton";
-            this._testButton.Size = new Size(68, 44);
-            this._testButton.TabIndex = 1;
 
             /* Remove the event handler AddToExpression from special buttons */
             _buttons[UIResources.SHOWRESULT].Click -= AddToExpression;
@@ -153,7 +171,6 @@ namespace Calculator_UI
             AddButtonToLayout();
             this.BackColor = Color.FromArgb(231,232,209);
             this.ClientSize = new Size(380, 355);
-            this.Controls.Add(this._testButton);
             this.Controls.Add(this._textBox);
             this.Name = UIResources.FORMNAME;
             this.ResumeLayout(false);

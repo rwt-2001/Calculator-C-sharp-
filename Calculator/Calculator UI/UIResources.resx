@@ -120,6 +120,12 @@
   <data name="ADD" xml:space="preserve">
     <value>buttonAdd</value>
   </data>
+  <data name="BRACKETLEFT" xml:space="preserve">
+    <value>(</value>
+  </data>
+  <data name="BRACKETRIGHT" xml:space="preserve">
+    <value>)</value>
+  </data>
   <data name="BUTTONCONFIGFILEPATH" xml:space="preserve">
     <value>ButtonsConfig.json</value>
   </data>

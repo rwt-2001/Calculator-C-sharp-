@@ -18,3 +18,23 @@ C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\bin\Debug
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\bin\Debug\operatorsConfiguration.json
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\bin\Debug\Math.Operations.dll
 C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\bin\Debug\Math.Operations.pdb
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\bin\Debug\operatorsConfiguration.json
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\bin\Debug\ButtonsConfig.json
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\bin\Debug\UnaryOperators.json
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\bin\Debug\Calculator UI.exe.config
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\bin\Debug\Calculator UI.exe
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\bin\Debug\Calculator UI.pdb
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\bin\Debug\Math.Operations.dll
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\bin\Debug\Math.Operations.pdb
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\obj\Debug\Calculator UI.csproj.AssemblyReference.cache
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\obj\Debug\Calculator UI.csproj.SuggestedBindingRedirects.cache
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\obj\Debug\Calculator_UI.Form1.resources
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\obj\Debug\Calculator_UI.Properties.Resources.resources
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\obj\Debug\Calculator_UI.UIResources.resources
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\obj\Debug\Calculator UI.csproj.GenerateResource.cache
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\obj\Debug\Calculator UI.csproj.CoreCompileInputs.cache
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\obj\Debug\Calculator UI.csproj.CopyComplete
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\obj\Debug\Calculator UI.exe
+C:\Users\Shubham Rawat\source\repos\shubham-rawat\Calculator\Calculator UI\obj\Debug\Calculator UI.pdb
