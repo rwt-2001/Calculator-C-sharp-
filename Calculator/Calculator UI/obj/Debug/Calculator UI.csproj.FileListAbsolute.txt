@@ -1,0 +1,20 @@
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\bin\Debug\Calculator UI.exe.config
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\bin\Debug\Calculator UI.exe
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\bin\Debug\Calculator UI.pdb
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\obj\Debug\Calculator UI.csproj.AssemblyReference.cache
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\obj\Debug\Calculator UI.csproj.SuggestedBindingRedirects.cache
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\obj\Debug\Calculator_UI.Form1.resources
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\obj\Debug\Calculator_UI.Properties.Resources.resources
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\obj\Debug\Calculator UI.csproj.GenerateResource.cache
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\obj\Debug\Calculator UI.csproj.CoreCompileInputs.cache
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\obj\Debug\Calculator UI.exe
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\obj\Debug\Calculator UI.pdb
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\obj\Debug\Calculator UI.csproj.CopyComplete
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\obj\Debug\Calculator_UI.UIResources.resources
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\bin\Debug\ButtonsConfig.json
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\bin\Debug\UnaryOperators.json
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\bin\Debug\operatorsConfiguration.json
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\bin\Debug\Math.Operations.dll
+C:\Users\GPCTAdmin\Desktop\shubham-rawat-Main\Calculator\Calculator UI\bin\Debug\Math.Operations.pdb
