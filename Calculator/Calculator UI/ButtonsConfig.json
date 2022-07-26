@@ -2,212 +2,175 @@
 
   "0": {
     "Name": "button0",
-    "LocationX": 90,
-    "LocationY": 299,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 1,
+    "LocationY": 5,
     "TabIndex": 1,
     "Text": "0"
   },
   "1": {
     "Name": "button1",
-    "LocationX": 16,
-    "LocationY": 249,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 0,
+    "LocationY": 4,
     "TabIndex": 2,
     "Text": "1"
   },
   "2": {
     "Name": "button2",
-    "LocationX": 90,
-    "LocationY": 249,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 1,
+    "LocationY": 4,
     "TabIndex": 3,
     "Text": "2"
   },
   "3": {
     "Name": "button3",
-    "LocationX": 164,
-    "LocationY": 249,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 2,
+    "LocationY": 4,
     "TabIndex": 4,
     "Text": "3"
   },
   "4": {
     "Name": "button4",
-    "LocationX": 16,
-    "LocationY": 199,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 0,
+    "LocationY": 3,
     "TabIndex": 5,
     "Text": "4"
   },
   "5": {
     "Name": "button5",
-    "LocationX": 90,
-    "LocationY": 199,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 1,
+    "LocationY": 3,
     "TabIndex": 6,
     "Text": "5"
   },
   "6": {
     "Name": "button6",
-    "LocationX": 164,
-    "LocationY": 199,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 2,
+    "LocationY": 3,
     "TabIndex": 7,
     "Text": "6"
   },
   "7": {
     "Name": "button7",
-    "LocationX": 16,
-    "LocationY": 149,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 0,
+    "LocationY": 2,
     "TabIndex": 8,
     "Text": "7"
   },
   "8": {
     "Name": "button8",
-    "LocationX": 90,
-    "LocationY": 149,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 1,
+    "LocationY": 2,
     "TabIndex": 9,
     "Text": "8"
   },
   "9": {
     "Name": "button9",
-    "LocationX": 164,
-    "LocationY": 149,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 2,
+    "LocationY": 2,
     "TabIndex": 10,
     "Text": "9"
   },
   ".": {
     "Name": "buttonDot",
-    "LocationX": 16,
-    "LocationY": 299,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 0,
+    "LocationY": 5,
     "TabIndex": 11,
     "Text": "."
 
   },
   "+": {
     "Name": "buttonAdd",
-    "LocationX": 164,
-    "LocationY": 299,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 2,
+    "LocationY": 5,
     "TabIndex": 13,
     "Text": "+"
   },
   "-": {
     "Name": "buttonSubtract",
-    "LocationX": 238,
-    "LocationY": 299,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 3,
+    "LocationY": 5,
     "TabIndex": 14,
     "Text": "-"
   },
   "*": {
     "Name": "buttonMultiply",
-    "LocationX": 238,
-    "LocationY": 199,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 3,
+    "LocationY": 3,
     "TabIndex": 15,
     "Text": "*"
   },
   "/": {
     "Name": "buttonDivide",
-    "LocationX": 238,
-    "LocationY": 249,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 3,
+    "LocationY": 4,
     "TabIndex": 16,
     "Text": "/"
   },
   "!": {
     "Name": "buttonFactorial",
-    "LocationX": 238,
-    "LocationY": 149,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 3,
+    "LocationY": 2,
     "TabIndex": 17,
     "Text": "!"
   },
   "=": {
     "Name": "result",
-    "LocationX": 310,
-    "LocationY": 250,
-    "Width": 64,
-    "Height": 92,
+    "LocationX": 4,
+    "LocationY": 5,
     "TabIndex": 18,
     "Text": "="
   },
   "(": {
     "Name": "bracketLeft",
-    "LocationX": 310,
-    "LocationY": 200,
-    "Width": 64,
-    "Height": 44,
+    "LocationX": 4,
+    "LocationY": 4,
     "TabIndex": 19,
     "Text": "("
   },
   ")": {
     "Name": "bracketRight",
-    "LocationX": 310,
-    "LocationY": 149,
-    "Width": 64,
-    "Height": 44,
+    "LocationX": 4,
+    "LocationY": 3,
     "TabIndex": 20,
     "Text": ")"
   },
   "Power": {
     "Name": "buttonPower",
-    "LocationX": 238,
-    "LocationY": 100,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 4,
+    "LocationY": 2,
     "TabIndex": 21,
     "Text": "^"
   },
   "%": {
     "Name": "buttonPercentage",
-    "LocationX": 164,
-    "LocationY": 100,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 2,
+    "LocationY": 1,
     "TabIndex": 22,
     "Text": "%"
   },
   "Reset": {
     "Name": "buttonReset",
-    "LocationX": 90,
-    "LocationY": 100,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 3,
+    "LocationY": 1,
     "TabIndex": 23,
     "Text": "C"
   },
   "Undo": {
     "Name": "buttonUndo",
-    "LocationX": 16,
-    "LocationY": 100,
-    "Width": 68,
-    "Height": 44,
+    "LocationX": 4,
+    "LocationY": 1,
     "TabIndex": 24,
     "Text": "CE"
-  }
+  },
+
+  "LogN": {
+    "Name": "buttonLogN",
+    "LocationX": 1,
+    "LocationY": 1,
+    "TabIndex": 29,
+    "Text": "ln"
+  },
+
 
 
 }

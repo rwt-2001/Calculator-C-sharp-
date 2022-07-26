@@ -29,6 +29,10 @@
   },
   "LogN": {
     "OperatorSymbol": "ln",
-    "OperatorPrecedence":  3
+    "OperatorPrecedence": 3
+  },
+  "Reciprocal": {
+    "OperatorSymbol": "reci",
+    "OperatorPrecedence": 3
   }
 }

@@ -88,6 +88,15 @@ namespace Math.Operations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to LogN.
+        /// </summary>
+        internal static string LogN {
+            get {
+                return ResourceManager.GetString("LogN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Multiplication.
         /// </summary>
         internal static string MULTIPICATION {
@@ -120,6 +129,15 @@ namespace Math.Operations {
         internal static string PRECENTAGE {
             get {
                 return ResourceManager.GetString("PRECENTAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reciprocal.
+        /// </summary>
+        internal static string RECIPROCAL {
+            get {
+                return ResourceManager.GetString("RECIPROCAL", resourceCulture);
             }
         }
         

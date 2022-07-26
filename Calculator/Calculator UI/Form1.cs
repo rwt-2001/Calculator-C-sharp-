@@ -10,11 +10,15 @@ namespace Calculator_UI
 {
     public partial class Form1 : Form
     {
+      
+        private Label _labelBox;
+        private SplitContainer _splitContainer;
+        private TableLayoutPanel _tableLayoutPanel;
+        
 
-        private TextBox _textBox;
+        /* Functions and Variables*/
         private Dictionary<string, ButtonInfo> _buttonsInfo = new Dictionary<string, ButtonInfo>();
         private Dictionary<string, Button> _buttons = new Dictionary<string, Button>();
-        
         private bool _binaryUsed = false;
         private bool _unaryUsed = false;
         private bool _dotUsed = false;
@@ -31,31 +35,26 @@ namespace Calculator_UI
 
         }
 
-        /*Adds button to the dictionary _numericButtons*/
-        private void CreateButtonInstance()
+        /*Adds button to the dictionary _numericButtons an to tableLayoutPanel*/
+        private void AddButtonToTable()
         {
             foreach(string buttonKey in _buttonsInfo.Keys)
             {
                 ButtonInfo buttonInfo = _buttonsInfo[buttonKey];
                 Button newButton = new Button();
                 newButton.Name = buttonInfo.Name;
-                newButton.Size = new Size(buttonInfo.Width, buttonInfo.Height);
-                newButton.Location = new Point(buttonInfo.LocationX, buttonInfo.LocationY);
+                newButton.Dock = DockStyle.Fill;
                 newButton.Text = buttonInfo.Text;
                 newButton.BackColor = Color.FromArgb(167,190,174);
                 newButton.Font = new Font(UIResources.TEXTFONTSTYLE, 16);
                 newButton.Click += AddToExpression;
-                _buttons[buttonInfo.Name] = newButton; 
+                
+                _buttons[buttonInfo.Name] = newButton;
+                this._tableLayoutPanel.Controls.Add(newButton,buttonInfo.LocationX,buttonInfo.LocationY);
+                
             }
         }
-        /* Add buttons to layout */
-        private void AddButtonToLayout()
-        {
-            foreach (string buttonKey in _buttons.Keys)
-            {
-                this.Controls.Add(_buttons[buttonKey]);
-            }
-        }
+
         private void AddToExpression(object sender, EventArgs e)
         {
             string value = (sender as Button).Text;
@@ -65,17 +64,17 @@ namespace Calculator_UI
             bool isLeftBracket = (value == UIResources.BRACKETLEFT);
             if ((isNumeric || value == UIResources.DOT) && !_unaryUsed )
             {
-                if (_textBox.Text.Length != 0 && _textBox.Text[_textBox.Text.Length - 1].ToString() == UIResources.BRACKETRIGHT) return;
+                if (_labelBox.Text.Length != 0 && _labelBox.Text[_labelBox.Text.Length - 1].ToString() == UIResources.BRACKETRIGHT) return;
                 if (_dotUsed && value == UIResources.DOT) return;
                 if(value == UIResources.DOT) _dotUsed = true;
                 _binaryUsed = false;
-                this._textBox.Text = this._textBox.Text == UIResources.ZEROSTRING ? value : _textBox.Text + value;
+                this._labelBox.Text = this._labelBox.Text == UIResources.ZEROSTRING ? value : _labelBox.Text + value;
             }
             else if( isBracket )
             {
-                if(isLeftBracket && _textBox.Text == UIResources.ZEROSTRING)
+                if(isLeftBracket && _labelBox.Text == UIResources.ZEROSTRING)
                 {
-                    _textBox.Text = value; 
+                    _labelBox.Text = value; 
                     _trackBrackets++;
                     return;
                 }
@@ -85,28 +84,35 @@ namespace Calculator_UI
                 {
                     if (_trackBrackets <= 0) return;
                     _trackBrackets--;
-                    this._textBox.Text = this._textBox.Text == UIResources.ZEROSTRING ? value : _textBox.Text + value;
+                    this._labelBox.Text = this._labelBox.Text == UIResources.ZEROSTRING ? value : _labelBox.Text + value;
                     return;
                 }
 
                 /* checks whether LeftBracket is not getting input after an operand  OR a Dot ( . ) */
-                else if (!((_textBox.Text.Length != 0 && _textBox.Text[_textBox.Text.Length - 1].ToString() == UIResources.BRACKETLEFT) || _binaryUsed)
-                        || _textBox.Text.Length != 0 && _textBox.Text[_textBox.Text.Length - 1].ToString() == UIResources.DOT) return;
+                else if (!((_labelBox.Text.Length != 0 && _labelBox.Text[_labelBox.Text.Length - 1].ToString() == UIResources.BRACKETLEFT) || _binaryUsed)
+                        || _labelBox.Text.Length != 0 && _labelBox.Text[_labelBox.Text.Length - 1].ToString() == UIResources.DOT) return;
                 else
                 {
                     _trackBrackets++;
                     _binaryUsed = false;
                     _unaryUsed = false;
-                    this._textBox.Text = this._textBox.Text == UIResources.ZEROSTRING ? value : _textBox.Text + value;
+                    this._labelBox.Text = this._labelBox.Text == UIResources.ZEROSTRING ? value : _labelBox.Text + value;
                 }
                
             }
-            else if (!_binaryUsed && !isNumeric && value!=UIResources.DOT && !isBracket )
+            else if ( !isNumeric && value!=UIResources.DOT )
+
             {
+                if (_binaryUsed)
+                {
+                    string preValue = this._labelBox.Text;
+                    this._labelBox.Text = preValue.Substring(0, preValue.Length - 2) + value + UIResources.SPACE;
+                    return;
+                }
                 /* If ( is on the left then don't add operator */
-                if (_textBox.Text.Length != 0 && _textBox.Text[_textBox.Text.Length - 1].ToString() == UIResources.BRACKETLEFT) return;
+                if (_labelBox.Text.Length != 0 && _labelBox.Text[_labelBox.Text.Length - 1].ToString() == UIResources.BRACKETLEFT) return;
                 bool isUnary = _unaryOperators.Contains(value);
-                this._textBox.Text += isUnary ? value +  UIResources.SPACE : UIResources.SPACE + value + UIResources.SPACE;
+                this._labelBox.Text += isUnary ? value +  UIResources.SPACE : UIResources.SPACE + value + UIResources.SPACE;
                 _binaryUsed = isUnary?false:true;
                 _unaryUsed = isUnary?true:false;
                 _dotUsed = false;
@@ -118,64 +124,137 @@ namespace Calculator_UI
             double result;
             try
             {
-                result = _evaluator.Evaluate(this._textBox.Text);
-                this._textBox.Text = result.ToString();
+                result = _evaluator.Evaluate(this._labelBox.Text);
+                this._labelBox.Text = result.ToString();
                 _binaryUsed = false;
+                 _unaryUsed = false;
+                 _dotUsed = false;
+                 _trackBrackets = 0;
             }
             catch(Exception exception)
             {
                 MessageBox.Show(exception.Message);
+                Reset(sender,e);
             }
         }
         private void Reset(object sender, EventArgs e)
         {
-            _textBox.Text = UIResources.ZEROSTRING;
+            _labelBox.Text = UIResources.ZEROSTRING;
             _binaryUsed = false;
             _unaryUsed = false;
             _dotUsed = false;
             _trackBrackets = 0;
-    }
+        }
+
+        private void Undo(object sender, EventArgs e)
+        {
+            string expression = _labelBox.Text;
+            for(int index = expression.Length - 2; index >= 0; index--)
+            {
+                if(index == 0) expression = UIResources.ZEROSTRING;
+                if(expression[index].ToString() == UIResources.SPACE)
+                {
+                    expression = expression.Substring(0, index);
+                    break;
+                }
+            }
+            _labelBox.Text = expression;
+        }
+
         public Form1()
         {
             GetButtonInfo();
-            CreateButtonInstance();
             InitializeComponent();
         }
         private void InitializeComponent()
         {
-            this._textBox = new TextBox();
+            
+            this._tableLayoutPanel = new TableLayoutPanel();
+            this._labelBox = new Label();
+            this._splitContainer = new SplitContainer();
+            ((System.ComponentModel.ISupportInitialize)(this._splitContainer)).BeginInit();
+            this._splitContainer.Panel1.SuspendLayout();
+            this._splitContainer.Panel2.SuspendLayout();
+            this._splitContainer.SuspendLayout();
             this.SuspendLayout();
             
             // 
-            // _textBox
+            // _labelBox
             // 
-            this._textBox.Font = new Font(UIResources.TEXTFONTSTYLE, 21F);
-            this._textBox.Location = new Point(14, 15);
-            this._textBox.Name = "_textBox";
-            this._textBox.Size = new Size(350, 39);
-            this._textBox.TabIndex = 12;
-            this._textBox.Text = UIResources.ZEROSTRING;
-            this._textBox.TextAlign = HorizontalAlignment.Right;
+            this._labelBox.Dock = DockStyle.Fill;
+            this._labelBox.Font = new Font(UIResources.TEXTFONTSTYLE, 25);
+            this._labelBox.Location = new Point(0, 0);
+            this._labelBox.Name = "_labelBox";
+            this._labelBox.Size = new Size(380, 100);
+            this._labelBox.TabIndex = 25;
+            this._labelBox.Text = "0";
+            this._labelBox.TextAlign = ContentAlignment.BottomRight;
 
-            /* Remove the event handler AddToExpression from special buttons */
-            _buttons[UIResources.SHOWRESULT].Click -= AddToExpression;
-            _buttons[UIResources.BUTTONUNDO].Click -= AddToExpression;
-            _buttons[UIResources.BUTTONRESET].Click -= AddToExpression;
-            
+            // 
+            // _splitContainer
+            // 
+            this._splitContainer.Dock = DockStyle.Fill;
+            this._splitContainer.IsSplitterFixed = true;
+            this._splitContainer.Location = new Point(0, 0);
+            this._splitContainer.Name = "_splitContainer";
+            this._splitContainer.Orientation = Orientation.Horizontal;
 
-            _buttons[UIResources.SHOWRESULT].Click += GetResult;
-            _buttons[UIResources.BUTTONRESET].Click += Reset;
             // 
-            // Form1
+            // _splitContainer.Panel1
             // 
-            AddButtonToLayout();
-            this.BackColor = Color.FromArgb(231,232,209);
-            this.ClientSize = new Size(380, 355);
-            this.Controls.Add(this._textBox);
-            this.Name = UIResources.FORMNAME;
+            this._splitContainer.Panel1.Controls.Add(this._labelBox);
+
+            //
+            // _tableLayoutPanel
+            // 
+            this._tableLayoutPanel.ColumnCount = 5;
+            this._tableLayoutPanel.Location = new Point(0, 0);
+            this._tableLayoutPanel.Name = "_tableLayoutPanel";
+            this._tableLayoutPanel.Dock = DockStyle.Fill;
+            this._tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            this._tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            this._tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            this._tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            this._tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            this._tableLayoutPanel.RowCount = 6;
+            this._tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            this._tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            this._tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            this._tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            this._tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            this._tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            this._tableLayoutPanel.TabIndex = 26;
+
+            /* Add button to table */
+            AddButtonToTable();
+            //_buttons[UIResources.SHOWRESULT].Click -= AddToExpression;
+            //_buttons[UIResources.BUTTONUNDO].Click -= AddToExpression;
+            //_buttons[UIResources.BUTTONRESET].Click -= AddToExpression;
+            //_buttons[UIResources.SHOWRESULT].Click += GetResult;
+            //_buttons[UIResources.BUTTONRESET].Click += Reset;
+            //_buttons[UIResources.BUTTONUNDO].Click += Undo;
+
+            // _splitContainer.Panel2
+
+            this._splitContainer.Panel2.Controls.Add(this._tableLayoutPanel);
+            this._splitContainer.Size = new Size(380, 450);
+            this._splitContainer.SplitterDistance = 100;
+            this._splitContainer.SplitterWidth = 1;
+            this._splitContainer.TabIndex = 27;
+             
+             //Form1
+             
+            this.ClientSize = new Size(380, 450);
+            this.Controls.Add(this._splitContainer);
+            this.MaximizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Name = "Form1";
+            this._splitContainer.Panel1.ResumeLayout(false);
+            this._splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this._splitContainer)).EndInit();
+            this._splitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
-
+            
         }
     }
 }

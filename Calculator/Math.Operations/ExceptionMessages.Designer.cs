@@ -70,7 +70,7 @@ namespace Math.Operations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Improper Bracket Format.
+        ///   Looks up a localized string similar to Brackets are not in format.
         /// </summary>
         internal static string IMPROPERBRACKET {
             get {
@@ -79,7 +79,7 @@ namespace Math.Operations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Given expression is not valid.
+        ///   Looks up a localized string similar to Invalid Expression.
         /// </summary>
         internal static string INVALIDEXPRESSION {
             get {
@@ -106,7 +106,7 @@ namespace Math.Operations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Operands given is not equal to number of operands reqired.
+        ///   Looks up a localized string similar to Insufficient operands.
         /// </summary>
         internal static string OPERANDMISMATCH {
             get {
@@ -133,7 +133,16 @@ namespace Math.Operations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Operation not defined : .
+        ///   Looks up a localized string similar to Value is too big.
+        /// </summary>
+        internal static string OVERFLOWEXCEPTION {
+            get {
+                return ResourceManager.GetString("OVERFLOWEXCEPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Undefined Operation.
         /// </summary>
         internal static string UNDEFINEDOPERATION {
             get {

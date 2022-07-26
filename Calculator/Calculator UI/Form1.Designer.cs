@@ -1,4 +1,5 @@
-﻿namespace Calculator_UI
+﻿using System;
+namespace Calculator_UI
 {
     partial class Form1
     {
@@ -19,6 +20,7 @@
             }
             base.Dispose(disposing);
         }
+
     }
 }
 

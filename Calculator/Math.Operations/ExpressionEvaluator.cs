@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-using Math.Operations;
 namespace Math.Operations
 {
     public class ExpressionEvaluator
@@ -26,6 +25,8 @@ namespace Math.Operations
             RegisterOperation(_operatorSymbolPrecedenceDictionary[Strings.FACTORIAL].OperatorSymbol , new Factorial(), _operatorSymbolPrecedenceDictionary[Strings.FACTORIAL].OperatorPrecedence);
             RegisterOperation(_operatorSymbolPrecedenceDictionary[Strings.POWER].OperatorSymbol, new Power(), _operatorSymbolPrecedenceDictionary[Strings.POWER].OperatorPrecedence);
             RegisterOperation(_operatorSymbolPrecedenceDictionary[Strings.PRECENTAGE].OperatorSymbol, new Precentage(), _operatorSymbolPrecedenceDictionary[Strings.PRECENTAGE].OperatorPrecedence);
+            RegisterOperation(_operatorSymbolPrecedenceDictionary[Strings.LogN].OperatorSymbol, new LogNatural(), _operatorSymbolPrecedenceDictionary[Strings.LogN].OperatorPrecedence);
+            RegisterOperation(_operatorSymbolPrecedenceDictionary[Strings.RECIPROCAL].OperatorSymbol, new Reciprocal(), _operatorSymbolPrecedenceDictionary[Strings.RECIPROCAL].OperatorPrecedence);  
         }
         
 

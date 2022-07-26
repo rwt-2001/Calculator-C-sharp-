@@ -126,6 +126,9 @@
   <data name="FACTORIAL" xml:space="preserve">
     <value>Factorial</value>
   </data>
+  <data name="LogN" xml:space="preserve">
+    <value>LogN</value>
+  </data>
   <data name="MULTIPICATION" xml:space="preserve">
     <value>Multiplication</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="PRECENTAGE" xml:space="preserve">
     <value>Precentage</value>
+  </data>
+  <data name="RECIPROCAL" xml:space="preserve">
+    <value>Reciprocal</value>
   </data>
   <data name="SUBTRACTION" xml:space="preserve">
     <value>Subtraction</value>
