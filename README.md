@@ -1,0 +1,2 @@
+# Calculator-C-sharp-
+This repository consists of a C# class library and a C# Window form application. The Math.Operation is a mathematical operations library which has different mathematical functions available and is also Scalable i.e., other new operations can be added easily without building whole library from scratch. The Calculator UI is a winform appication which uses Math.Operation library for carrying out calculations.
