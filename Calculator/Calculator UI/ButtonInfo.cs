@@ -2,7 +2,7 @@
 
 namespace Calculator_UI
 {
-    public class ButtonInfo
+    internal class ButtonInfo
     {
         public string Name;
         public int LocationX;

@@ -1,0 +1,31 @@
+{
+  "MemoryRead": {
+    "Name": "buttonMR",
+    "LocationX": 1,
+    "LocationY": 1,
+    "TabIndex": 30,
+    "Text": "MR"
+  },
+  "MemorySave": {
+    "Name": "buttonMS",
+    "LocationX": 0,
+    "LocationY": 1,
+    "TabIndex": 331,
+    "Text": "MS"
+  },
+  "Reset": {
+    "Name": "buttonReset",
+    "LocationX": 4,
+    "LocationY": 1,
+    "TabIndex": 23,
+    "Text": "C"
+  },
+  "=": {
+    "Name": "result",
+    "LocationX": 4,
+    "LocationY": 5,
+    "TabIndex": 18,
+    "Text": "="
+  }
+
+}

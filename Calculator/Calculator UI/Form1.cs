@@ -14,30 +14,41 @@ namespace Calculator_UI
         private Label _labelBox;
         private SplitContainer _splitContainer;
         private TableLayoutPanel _tableLayoutPanel;
-        
 
-        /* Functions and Variables*/
-        private Dictionary<string, ButtonInfo> _buttonsInfo = new Dictionary<string, ButtonInfo>();
-        private Dictionary<string, Button> _buttons = new Dictionary<string, Button>();
+
+        /*Variables*/
+        private Dictionary<string, ButtonInfo> _buttonsInfo;
+        private Dictionary<string, Button> _buttons;
+        private Dictionary<string, ButtonInfo> _specialButtonsInfo;
+        private MemoryData _memoryData;
         private bool _binaryUsed = false;
         private bool _unaryUsed = false;
         private bool _dotUsed = false;
         private int _trackBrackets = 0;
         private string[] _unaryOperators;
         private ExpressionEvaluator _evaluator = new ExpressionEvaluator();
-
+        
+        /* Gather the button data */
         private void GetButtonInfo()
         {
+            
             string content = File.ReadAllText(UIResources.BUTTONCONFIGFILEPATH);
             _buttonsInfo = JsonConvert.DeserializeObject<Dictionary<string, ButtonInfo>>(content);
+
+            content = File.ReadAllText(UIResources.SPECIALBUTTONCONFIGFILEPATH);
+            _specialButtonsInfo = JsonConvert.DeserializeObject<Dictionary<string, ButtonInfo>>(content);
+
+
             content = File.ReadAllText(UIResources.UNARYOPERATORS);
             _unaryOperators = JsonConvert.DeserializeObject<string[]>(content);
+            
 
         }
 
         /*Adds button to the dictionary _numericButtons an to tableLayoutPanel*/
         private void AddButtonToTable()
         {
+            /* Loop adds button for operators and operands */
             foreach(string buttonKey in _buttonsInfo.Keys)
             {
                 ButtonInfo buttonInfo = _buttonsInfo[buttonKey];
@@ -47,11 +58,23 @@ namespace Calculator_UI
                 newButton.Text = buttonInfo.Text;
                 newButton.BackColor = Color.FromArgb(167,190,174);
                 newButton.Font = new Font(UIResources.TEXTFONTSTYLE, 16);
-                newButton.Click += AddToExpression;
-                
+                newButton.Click += AddToExpression;             
                 _buttons[buttonInfo.Name] = newButton;
                 this._tableLayoutPanel.Controls.Add(newButton,buttonInfo.LocationX,buttonInfo.LocationY);
-                
+            }
+
+            /* Loop adds special button like reset memory buttons */
+            foreach(string buttonKey in _specialButtonsInfo.Keys)
+            {
+                ButtonInfo buttonInfo = _specialButtonsInfo[buttonKey];
+                Button newButton = new Button();
+                newButton.Name = buttonInfo.Name;
+                newButton.Dock = DockStyle.Fill;
+                newButton.Text = buttonInfo.Text;
+                newButton.BackColor = Color.FromArgb(167, 190, 174);
+                newButton.Font = new Font(UIResources.TEXTFONTSTYLE, 16);
+                _buttons[buttonInfo.Name] = newButton;
+                this._tableLayoutPanel.Controls.Add(newButton, buttonInfo.LocationX, buttonInfo.LocationY);
             }
         }
 
@@ -126,10 +149,7 @@ namespace Calculator_UI
             {
                 result = _evaluator.Evaluate(this._labelBox.Text);
                 this._labelBox.Text = result.ToString();
-                _binaryUsed = false;
-                 _unaryUsed = false;
-                 _dotUsed = false;
-                 _trackBrackets = 0;
+                ReInititalizeValues();
             }
             catch(Exception exception)
             {
@@ -140,29 +160,39 @@ namespace Calculator_UI
         private void Reset(object sender, EventArgs e)
         {
             _labelBox.Text = UIResources.ZEROSTRING;
+            ReInititalizeValues();
+        }
+
+   
+        private void ReInititalizeValues()
+        {
             _binaryUsed = false;
             _unaryUsed = false;
             _dotUsed = false;
             _trackBrackets = 0;
         }
-
-        private void Undo(object sender, EventArgs e)
+        /* Copy and paste functionality */
+        private void MemorySave(object sender, EventArgs e)
         {
-            string expression = _labelBox.Text;
-            for(int index = expression.Length - 2; index >= 0; index--)
-            {
-                if(index == 0) expression = UIResources.ZEROSTRING;
-                if(expression[index].ToString() == UIResources.SPACE)
-                {
-                    expression = expression.Substring(0, index);
-                    break;
-                }
-            }
-            _labelBox.Text = expression;
+            string data = this._labelBox.Text;
+            this._memoryData.SetMemory(data, _binaryUsed, _unaryUsed, _dotUsed, _trackBrackets);
         }
+        private void MemoryRead(object sender, EventArgs e )
+        {
+            if (this._memoryData.data == string.Empty) return;
+            this._binaryUsed = _memoryData._binaryUsed;
+            this._unaryUsed = _memoryData._unaryUsed;
+            this._dotUsed = _memoryData._dotUsed;
+            this._trackBrackets =this. _memoryData._trackBrackets;
+            this._labelBox.Text = this._labelBox.Text==UIResources.ZEROSTRING ? this._memoryData.data : this._labelBox.Text + this._memoryData.data;
 
+        }
         public Form1()
         {
+            _buttonsInfo = new Dictionary<string, ButtonInfo>();
+            _buttons = new Dictionary<string, Button>();
+            _specialButtonsInfo =  new Dictionary<string, ButtonInfo>();
+            _memoryData = new MemoryData();
             GetButtonInfo();
             InitializeComponent();
         }
@@ -227,13 +257,10 @@ namespace Calculator_UI
 
             /* Add button to table */
             AddButtonToTable();
-            //_buttons[UIResources.SHOWRESULT].Click -= AddToExpression;
-            //_buttons[UIResources.BUTTONUNDO].Click -= AddToExpression;
-            //_buttons[UIResources.BUTTONRESET].Click -= AddToExpression;
-            //_buttons[UIResources.SHOWRESULT].Click += GetResult;
-            //_buttons[UIResources.BUTTONRESET].Click += Reset;
-            //_buttons[UIResources.BUTTONUNDO].Click += Undo;
-
+            _buttons[UIResources.SHOWRESULT].Click += GetResult;
+            _buttons[UIResources.BUTTONRESET].Click += Reset;
+            _buttons[UIResources.MEMORYREAD].Click += MemoryRead;
+            _buttons[UIResources.MEMORYSAVE].Click += MemorySave;
             // _splitContainer.Panel2
 
             this._splitContainer.Panel2.Controls.Add(this._tableLayoutPanel);

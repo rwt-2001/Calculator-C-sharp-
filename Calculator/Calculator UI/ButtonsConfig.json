@@ -113,13 +113,7 @@
     "TabIndex": 17,
     "Text": "!"
   },
-  "=": {
-    "Name": "result",
-    "LocationX": 4,
-    "LocationY": 5,
-    "TabIndex": 18,
-    "Text": "="
-  },
+
   "(": {
     "Name": "bracketLeft",
     "LocationX": 4,
@@ -143,34 +137,18 @@
   },
   "%": {
     "Name": "buttonPercentage",
-    "LocationX": 2,
+    "LocationX": 3,
     "LocationY": 1,
     "TabIndex": 22,
     "Text": "%"
   },
-  "Reset": {
-    "Name": "buttonReset",
-    "LocationX": 3,
-    "LocationY": 1,
-    "TabIndex": 23,
-    "Text": "C"
-  },
-  "Undo": {
-    "Name": "buttonUndo",
-    "LocationX": 4,
-    "LocationY": 1,
-    "TabIndex": 24,
-    "Text": "CE"
-  },
 
   "LogN": {
     "Name": "buttonLogN",
-    "LocationX": 1,
+    "LocationX": 2,
     "LocationY": 1,
     "TabIndex": 29,
     "Text": "ln"
-  },
-
-
+  }
 
 }

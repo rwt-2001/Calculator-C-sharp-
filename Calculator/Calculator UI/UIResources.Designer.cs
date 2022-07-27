@@ -106,15 +106,6 @@ namespace Calculator_UI {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to buttonUndo.
-        /// </summary>
-        internal static string BUTTONUNDO {
-            get {
-                return ResourceManager.GetString("BUTTONUNDO", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to ..
         /// </summary>
         internal static string DOT {
@@ -133,6 +124,24 @@ namespace Calculator_UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to buttonMR.
+        /// </summary>
+        internal static string MEMORYREAD {
+            get {
+                return ResourceManager.GetString("MEMORYREAD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to buttonMS.
+        /// </summary>
+        internal static string MEMORYSAVE {
+            get {
+                return ResourceManager.GetString("MEMORYSAVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to result.
         /// </summary>
         internal static string SHOWRESULT {
@@ -147,6 +156,15 @@ namespace Calculator_UI {
         internal static string SPACE {
             get {
                 return ResourceManager.GetString("SPACE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SpecialButtonConfig.json.
+        /// </summary>
+        internal static string SPECIALBUTTONCONFIGFILEPATH {
+            get {
+                return ResourceManager.GetString("SPECIALBUTTONCONFIGFILEPATH", resourceCulture);
             }
         }
         

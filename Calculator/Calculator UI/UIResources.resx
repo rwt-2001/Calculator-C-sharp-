@@ -132,20 +132,26 @@
   <data name="BUTTONRESET" xml:space="preserve">
     <value>buttonReset</value>
   </data>
-  <data name="BUTTONUNDO" xml:space="preserve">
-    <value>buttonUndo</value>
-  </data>
   <data name="DOT" xml:space="preserve">
     <value>.</value>
   </data>
   <data name="FORMNAME" xml:space="preserve">
     <value>Calculator</value>
   </data>
+  <data name="MEMORYREAD" xml:space="preserve">
+    <value>buttonMR</value>
+  </data>
+  <data name="MEMORYSAVE" xml:space="preserve">
+    <value>buttonMS</value>
+  </data>
   <data name="SHOWRESULT" xml:space="preserve">
     <value>result</value>
   </data>
   <data name="SPACE" xml:space="preserve">
     <value> </value>
+  </data>
+  <data name="SPECIALBUTTONCONFIGFILEPATH" xml:space="preserve">
+    <value>SpecialButtonConfig.json</value>
   </data>
   <data name="TEXTFONTSTYLE" xml:space="preserve">
     <value>Microsoft Sans Serif</value>
